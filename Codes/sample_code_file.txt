@@ -1,0 +1,2 @@
+#include stdio.in
+printf("hello world");
