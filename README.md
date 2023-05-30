@@ -1,2 +1,2 @@
 # onlinediagnosis
-GDP I Team Project
+GDP-I Team Project
