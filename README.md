@@ -1,15 +1,15 @@
 **Our Project Online Diagnosis iOS Application helps patients with the below features**
 
-* Search doctors on locations
-* Schedule Appointments with Doctors
-* obtain Prescription from doctor
-* process payment
-* Consult via video call & chat with doctor on emmergency
-* Check medical history
+* Search doctors based on their location preferences
+* Schedule appointments with doctors
+* Obtain prescription from the doctor
+* Process payment
+* In case of emergency, patient can also connect through video call/chat
+* Check their medical history
 
 **Doctors Functionalities**
-* Accept/reject patient appoints
-* diagnoize patient via video call & chat with doctor on emmergency
+* Accept/Reject patient appointment request
+* Diagnose the patient via video call/chat in case of emergency
 * Provide Prescription
 
 **Admin Functionalities**
