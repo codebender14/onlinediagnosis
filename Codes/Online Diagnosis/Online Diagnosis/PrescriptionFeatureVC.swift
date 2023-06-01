@@ -15,7 +15,11 @@ class PrescriptionFeatureVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func GetStartedBTN(_ sender: UIButton) {
+        let Home = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeVC
+        self.navigationController?.pushViewController(Home, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

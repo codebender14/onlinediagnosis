@@ -40,14 +40,14 @@
 		1530CD542A26D88300BE5C3C /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1530CD532A26D88300BE5C3C /* FirebaseRemoteConfigSwift */; };
 		1530CD562A26D88300BE5C3C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1530CD552A26D88300BE5C3C /* FirebaseStorage */; };
 		1530CD582A26D88300BE5C3C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1530CD572A26D88300BE5C3C /* FirebaseStorageCombine-Community */; };
-		1530CD5A2A26D89F00BE5C3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1530CD592A26D89F00BE5C3C /* GoogleService-Info.plist */; };
 		1530CD5C2A26D96200BE5C3C /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD5B2A26D96200BE5C3C /* SignUpVC.swift */; };
 		1530CD5E2A26D97800BE5C3C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD5D2A26D97800BE5C3C /* LoginVC.swift */; };
 		1530CD602A26D99100BE5C3C /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD5F2A26D99100BE5C3C /* ForgotVC.swift */; };
-		1530CD622A26D9BC00BE5C3C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD612A26D9BC00BE5C3C /* HomeVC.swift */; };
 		1530CD642A26DE5A00BE5C3C /* FindFeaturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD632A26DE5A00BE5C3C /* FindFeaturesVC.swift */; };
 		1530CD662A26DE7000BE5C3C /* VirtualFeatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD652A26DE7000BE5C3C /* VirtualFeatureVC.swift */; };
 		1530CD682A26DE9800BE5C3C /* PrescriptionFeatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD672A26DE9800BE5C3C /* PrescriptionFeatureVC.swift */; };
+		154E0F022A27A54000A32586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 154E0F012A27A53F00A32586 /* GoogleService-Info.plist */; };
+		154E0F072A27E90600A32586 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E0F062A27E90600A32586 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,14 +59,14 @@
 		1530CD162A268F1400BE5C3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1530CD192A268F1400BE5C3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1530CD1B2A268F1400BE5C3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1530CD592A26D89F00BE5C3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1530CD5B2A26D96200BE5C3C /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1530CD5D2A26D97800BE5C3C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1530CD5F2A26D99100BE5C3C /* ForgotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
-		1530CD612A26D9BC00BE5C3C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1530CD632A26DE5A00BE5C3C /* FindFeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFeaturesVC.swift; sourceTree = "<group>"; };
 		1530CD652A26DE7000BE5C3C /* VirtualFeatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualFeatureVC.swift; sourceTree = "<group>"; };
 		1530CD672A26DE9800BE5C3C /* PrescriptionFeatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionFeatureVC.swift; sourceTree = "<group>"; };
+		154E0F012A27A53F00A32586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		154E0F062A27E90600A32586 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,17 +129,17 @@
 				1530CD212A26952200BE5C3C /* Supporting Files */,
 				1530CD112A268F1300BE5C3C /* LoginSignUpVC.swift */,
 				1530CD132A268F1300BE5C3C /* Main.storyboard */,
+				154E0F062A27E90600A32586 /* HomeVC.swift */,
 				1530CD632A26DE5A00BE5C3C /* FindFeaturesVC.swift */,
 				1530CD652A26DE7000BE5C3C /* VirtualFeatureVC.swift */,
 				1530CD672A26DE9800BE5C3C /* PrescriptionFeatureVC.swift */,
-				1530CD612A26D9BC00BE5C3C /* HomeVC.swift */,
 				1530CD5F2A26D99100BE5C3C /* ForgotVC.swift */,
 				1530CD5B2A26D96200BE5C3C /* SignUpVC.swift */,
 				1530CD5D2A26D97800BE5C3C /* LoginVC.swift */,
 				1530CD162A268F1400BE5C3C /* Assets.xcassets */,
 				1530CD182A268F1400BE5C3C /* LaunchScreen.storyboard */,
 				1530CD1B2A268F1400BE5C3C /* Info.plist */,
-				1530CD592A26D89F00BE5C3C /* GoogleService-Info.plist */,
+				154E0F012A27A53F00A32586 /* GoogleService-Info.plist */,
 			);
 			path = "Online Diagnosis";
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1530CD1A2A268F1400BE5C3C /* LaunchScreen.storyboard in Resources */,
-				1530CD5A2A26D89F00BE5C3C /* GoogleService-Info.plist in Resources */,
+				154E0F022A27A54000A32586 /* GoogleService-Info.plist in Resources */,
 				1530CD172A268F1400BE5C3C /* Assets.xcassets in Resources */,
 				1530CD152A268F1300BE5C3C /* Main.storyboard in Resources */,
 			);
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1530CD5C2A26D96200BE5C3C /* SignUpVC.swift in Sources */,
-				1530CD622A26D9BC00BE5C3C /* HomeVC.swift in Sources */,
+				154E0F072A27E90600A32586 /* HomeVC.swift in Sources */,
 				1530CD122A268F1300BE5C3C /* LoginSignUpVC.swift in Sources */,
 				1530CD642A26DE5A00BE5C3C /* FindFeaturesVC.swift in Sources */,
 				1530CD0E2A268F1300BE5C3C /* AppDelegate.swift in Sources */,
@@ -415,6 +415,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online Diagnosis/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -442,6 +443,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online Diagnosis/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

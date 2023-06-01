@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AxU-K5-pia">
-                                <rect key="frame" x="0.0" y="198.66666666666666" width="393" height="454.66666666666674"/>
+                                <rect key="frame" x="0.0" y="199" width="393" height="454"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Online Diagnosis" translatesAutoresizingMaskIntoConstraints="NO" id="vvW-YQ-QUe">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="401.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="396"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Diagnosis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-14-gVz">
-                                        <rect key="frame" x="0.0" y="409.33333333333337" width="393" height="45.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-14-gVz">
+                                        <rect key="frame" x="0.0" y="404" width="393" height="50"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

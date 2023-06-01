@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyA7cGsxWzqsg1a9ftXZxHDmaB93Q9QARG4</string>
+	<string>AIzaSyCbKCNV5bIezRIlF67JnJUjArEHwnMXSSA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>376744942428</string>
+	<string>87205411334</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nwmissouri.edu</string>
+	<string>com.nwmissouri.edu.Online-Diagnosis</string>
 	<key>PROJECT_ID</key>
-	<string>online-diagnosis-b654e</string>
+	<string>online-diagnosis-2354d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>online-diagnosis-b654e.appspot.com</string>
+	<string>online-diagnosis-2354d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:376744942428:ios:c42aa6bfe6cb266fc1bf99</string>
+	<string>1:87205411334:ios:154c707fb4cb565347a187</string>
 </dict>
 </plist>
