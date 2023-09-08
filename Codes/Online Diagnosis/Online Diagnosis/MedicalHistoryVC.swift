@@ -1,13 +1,13 @@
 //
-//  PrescriptionFeatureVC.swift
+//  MedicalHistoryVC.swift
 //  Online Diagnosis
 //
-//  Created by Chaparala,Naga Akhil on 5/30/23.
+//  Created by Naga Akhil Chaparala on 9/7/23.
 //
 
 import UIKit
 
-class PrescriptionFeatureVC: UIViewController {
+class MedicalHistoryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +15,7 @@ class PrescriptionFeatureVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func GetStartedBTN(_ sender: UIButton) {
-        let Home = self.storyboard?.instantiateViewController(withIdentifier: "prehome")as! UserTabBarVC
-        self.navigationController?.pushViewController(Home, animated: true)
-    }
-    
+
     /*
     // MARK: - Navigation
 

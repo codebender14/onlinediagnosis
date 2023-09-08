@@ -36,12 +36,12 @@ class LoginSignUpVC: UIViewController {
             }
         }
     }
-//    else{
-//        let alertController = UIAlertController(title: "Error", message: "FaceID not available on this device", preferredStyle: .alert)
-//        let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alertController.addAction(OK)
-//        self.present(alertController, animated: true, completion: nil)
-//        }
+    else{
+        let alertController = UIAlertController(title: "Error", message: "FaceID not available on this device", preferredStyle: .alert)
+        let OK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OK)
+        self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func SignUpBTN(_ sender: UIButton) {

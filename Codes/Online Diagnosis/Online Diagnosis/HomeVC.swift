@@ -32,6 +32,21 @@ class HomeVC: UIViewController {
     }
     */
     
+    @IBAction func prescriptionLBL(_ sender: UIButton) {
+//        let prescriptionLT = self.storyboard?.instantiateViewController(withIdentifier: "prescriptions")as! PrescriptionVC
+//        self.navigationController?.pushViewController(prescriptionLT, animated: true)
+    }
+    
+    @IBAction func medicalhistoryLBL(_ sender: UIButton) {
+//        let medicalHR = self.storyboard?.instantiateViewController(withIdentifier: "medicalhistory")as! MedicalHistoryVC
+//        self.navigationController?.pushViewController(medicalHR, animated: true)
+    }
+    
+    @IBAction func viewAppointmentsBTN(_ sender: UIButton) {
+//        let viewappoint = self.storyboard?.instantiateViewController(withIdentifier: "appointments")as! AppointmentsVC
+//        self.navigationController?.pushViewController(viewappoint, animated: true)
+    }
+    
     func getUserName() {
         
         let mail = Auth.auth().currentUser?.email!

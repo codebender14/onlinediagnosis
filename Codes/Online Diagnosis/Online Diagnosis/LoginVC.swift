@@ -37,7 +37,7 @@ class LoginVC: UIViewController {
             } else {
                 // User data added successfully
                 print("Successful sign in")
-                let login = self.storyboard?.instantiateViewController(withIdentifier: "home") as! HomeVC
+                let login = self.storyboard?.instantiateViewController(withIdentifier: "prehome") as! UserTabBarVC
                 self.navigationController?.pushViewController(login, animated: true)
             }
         }

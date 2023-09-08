@@ -87,8 +87,7 @@ class SignUpVC: UIViewController {
             "firstName": firstName,
             "middleName": middleName,
             "lastName": lastName,
-            "email": email,
-            "password": password
+            "email": email
         ]
 
         Auth.auth().createUser(withEmail: email, password: password) {
@@ -105,7 +104,12 @@ class SignUpVC: UIViewController {
         
 
         // Add user data to a collection
-        self.db.collection("users").addDocument(data: userData) { error in
+        self.db.collection("users").document(email).setData([
+            "email": email,
+            "firstName": firstName,
+            "lastName": lastName,
+            "middleName": middleName
+        ]) { error in
             if let error = error {
                 // Handle error
                 print("Error adding document: \(error)")
