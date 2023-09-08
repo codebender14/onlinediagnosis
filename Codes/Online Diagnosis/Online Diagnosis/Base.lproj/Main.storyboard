@@ -569,7 +569,7 @@
         <!--Profile-->
         <scene sceneID="1sT-1N-8bI">
             <objects>
-                <viewController id="4hu-JT-GIS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doctor_profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4hu-JT-GIS" customClass="Doctor_ProfileVC" customModule="Online_Diagnosis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qPf-Mg-raF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -655,6 +655,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="LogOut">
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutBTN:" destination="4hu-JT-GIS" eventType="touchUpInside" id="Ouc-DK-XJp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LPO-5O-WNX"/>
@@ -954,7 +957,7 @@
         <!--Home-->
         <scene sceneID="9oh-24-wAL">
             <objects>
-                <viewController id="UuF-oT-2Xe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doctor_home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UuF-oT-2Xe" customClass="Doctor_HomeVC" customModule="Online_Diagnosis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6E-hH-Wl4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -989,6 +992,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="View Appointments"/>
+                                <connections>
+                                    <action selector="viewappointmentsBTN:" destination="UuF-oT-2Xe" eventType="touchUpInside" id="8Yr-AJ-ypn"/>
+                                    <segue destination="gaf-6M-Qrr" kind="show" id="seE-Vg-Prx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jIB-4u-uT0"/>
@@ -999,6 +1006,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Iv-rY-ckE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973" y="2141"/>
+        </scene>
+        <!--Doctor AppointmentsVC-->
+        <scene sceneID="uyM-yu-1oo">
+            <objects>
+                <viewController storyboardIdentifier="doctor_appointment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gaf-6M-Qrr" customClass="Doctor_AppointmentsVC" customModule="Online_Diagnosis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z4i-UU-quq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="csm-xN-7s1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3qz-Zf-yLd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bm4-ae-eV0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="2933"/>
         </scene>
         <!--Connect-->
         <scene sceneID="nx2-qe-JR6">
