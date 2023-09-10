@@ -53,6 +53,7 @@ class HomeVC: UIViewController {
         
         let userRef = db.collection("users").whereField("email", isEqualTo: mail!)
         
+        
         userRef.getDocuments() {
             (querySnapshot, err) in
                 if let err = err {
