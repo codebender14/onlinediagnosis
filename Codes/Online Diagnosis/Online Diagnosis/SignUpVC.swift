@@ -58,6 +58,7 @@ class SignUpVC: UIViewController {
         if email.isEmpty && !self.validateEmail(enteredEmail: emailTF.text!){
             displayAlert(message: "Please enter your email ID.")
             return
+            
         } else if !self.validateEmail(enteredEmail: emailTF.text!){
             displayAlert(message: "Please enter valid email ID.")
             return

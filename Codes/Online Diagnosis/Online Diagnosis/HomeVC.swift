@@ -22,6 +22,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var userNameLbl: UILabel!
     
+    
     /*
     // MARK: - Navigation
 
@@ -52,6 +53,7 @@ class HomeVC: UIViewController {
         let mail = Auth.auth().currentUser?.email!
         
         let userRef = db.collection("users").whereField("email", isEqualTo: mail!)
+
         
         
         userRef.getDocuments() {
