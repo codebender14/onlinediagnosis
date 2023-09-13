@@ -288,16 +288,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyI-r2-f3u">
+                                <rect key="frame" x="338" y="110" width="48" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="🗺️"/>
+                                <connections>
+                                    <action selector="toggleMapType:" destination="FNp-cH-51f" eventType="touchUpInside" id="S4I-3w-WON"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yyd-B9-blG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Book" image="briefcase" catalog="system" id="D08-T5-FlQ"/>
                     <connections>
+                        <outlet property="mapTypeButton" destination="HyI-r2-f3u" id="jEa-nR-zpS"/>
                         <outlet property="mapView" destination="cM0-wq-tfE" id="Bkq-iW-hUC"/>
-                        <segue destination="Jnc-rl-mJG" kind="popoverPresentation" popoverAnchorView="cM0-wq-tfE" id="l9u-CU-WJH">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="Jnc-rl-mJG" kind="show" identifier="" id="l9u-CU-WJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqG-KT-5sG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -887,15 +896,22 @@
             <objects>
                 <viewController id="Jnc-rl-mJG" customClass="HospitalInfoVC" customModule="Online_Diagnosis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yfn-gO-aAH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Online Diagnosis" translatesAutoresizingMaskIntoConstraints="NO" id="BKq-x6-2YF">
+                                <rect key="frame" x="16" y="103" width="361" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GoZ-Tj-4si"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Akf-Ut-gYQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwl-0j-QpB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4256" y="1396"/>
+            <point key="canvasLocation" x="4255.7251908396947" y="1395.0704225352113"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6zq-WD-6gC">
@@ -1216,6 +1232,9 @@
         </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

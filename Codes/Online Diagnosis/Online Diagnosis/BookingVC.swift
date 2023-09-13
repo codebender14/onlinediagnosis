@@ -12,6 +12,9 @@ import CoreLocation
 class BookingVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapTypeButton: UIButton!
+    
+    var isSatelliteView = false
     
     let locationManager = CLLocationManager()
     
@@ -20,13 +23,24 @@ class BookingVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate 
         // Set up location manager and request authorization
         locationManager.delegate = self
         mapView.delegate = self
-
+        
         locationManager.requestWhenInUseAuthorization()
-
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
+        mapView.mapType = .standard
+    }
+    @IBAction func toggleMapType(_ sender: UIButton) {
+        // Toggle between standard and satellite map views.
+        if isSatelliteView {
+            mapView.mapType = .standard
+        } else {
+            mapView.mapType = .satellite
+        }
+        // Toggle the flag.
+        isSatelliteView.toggle()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
