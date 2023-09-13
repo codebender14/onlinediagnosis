@@ -48,6 +48,7 @@
 		1530CD682A26DE9800BE5C3C /* PrescriptionFeatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1530CD672A26DE9800BE5C3C /* PrescriptionFeatureVC.swift */; };
 		154E0F022A27A54000A32586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 154E0F012A27A53F00A32586 /* GoogleService-Info.plist */; };
 		154E0F072A27E90600A32586 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E0F062A27E90600A32586 /* HomeVC.swift */; };
+		68ABC3B32AB154EB008FCA4D /* HospitalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ABC3B22AB154EB008FCA4D /* HospitalInfoVC.swift */; };
 		68C502252AAA37D700008ABA /* AppointmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C502242AAA37D700008ABA /* AppointmentsVC.swift */; };
 		68C502272AAA715400008ABA /* MedicalHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C502262AAA715400008ABA /* MedicalHistoryVC.swift */; };
 		68C502292AAA725000008ABA /* PrescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C502282AAA725000008ABA /* PrescriptionVC.swift */; };
@@ -77,6 +78,7 @@
 		1530CD672A26DE9800BE5C3C /* PrescriptionFeatureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionFeatureVC.swift; sourceTree = "<group>"; };
 		154E0F012A27A53F00A32586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		154E0F062A27E90600A32586 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		68ABC3B22AB154EB008FCA4D /* HospitalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalInfoVC.swift; sourceTree = "<group>"; };
 		68C502242AAA37D700008ABA /* AppointmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsVC.swift; sourceTree = "<group>"; };
 		68C502262AAA715400008ABA /* MedicalHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryVC.swift; sourceTree = "<group>"; };
 		68C502282AAA725000008ABA /* PrescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionVC.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				68F842042AAAB96B00641CBD /* UserTabBarVC.swift */,
 				68C502342AAA983500008ABA /* Patient_ProfileVC.swift */,
 				68F842062AAAC1AA00641CBD /* BookingVC.swift */,
+				68ABC3B22AB154EB008FCA4D /* HospitalInfoVC.swift */,
 				68C502262AAA715400008ABA /* MedicalHistoryVC.swift */,
 				68C502242AAA37D700008ABA /* AppointmentsVC.swift */,
 				154E0F062A27E90600A32586 /* HomeVC.swift */,
@@ -290,6 +293,7 @@
 				68F842052AAAB96B00641CBD /* UserTabBarVC.swift in Sources */,
 				68C502252AAA37D700008ABA /* AppointmentsVC.swift in Sources */,
 				1530CD5C2A26D96200BE5C3C /* SignUpVC.swift in Sources */,
+				68ABC3B32AB154EB008FCA4D /* HospitalInfoVC.swift in Sources */,
 				68C502292AAA725000008ABA /* PrescriptionVC.swift in Sources */,
 				154E0F072A27E90600A32586 /* HomeVC.swift in Sources */,
 				68C502272AAA715400008ABA /* MedicalHistoryVC.swift in Sources */,
@@ -459,7 +463,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -491,7 +496,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
