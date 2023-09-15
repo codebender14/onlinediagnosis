@@ -1,0 +1,225 @@
+
+
+import UIKit
+import MapKit
+import CoreLocation
+
+class BookVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate  {
+
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var searchDoctor: UITextField!
+
+    private let locationManager = CLLocationManager()
+    var hospitalData : [[String:String]] = []
+    var filterList : [[String:String]] = []
+    var searchBool = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        locationManager.delegate = self
+        mapView.delegate = self
+        mapView.mapType = .standard
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+
+        // Request location permissions
+        locationManager.requestWhenInUseAuthorization()
+        
+        // Configure the map view
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getHospitalList()
+
+    }
+    
+    // MARK: - MKMapViewDelegate
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+            if annotation is MKUserLocation {
+                       // Return nil for the user's location annotation
+                       return nil
+                   }
+                   
+                   // Use the custom annotation view for your custom annotations
+                   if let customAnnotation = annotation as? CustomAnnotation {
+                       let identifier = "CustomAnnotationView"
+                       var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? CustomAnnotationView
+                       
+                       if annotationView == nil {
+                           annotationView = CustomAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
+                           annotationView?.canShowCallout = true
+                       } else {
+                           annotationView?.annotation = customAnnotation
+                       }
+                       
+                       return annotationView
+                   }
+                   
+                   return nil
+         }
+//    {
+//        if annotation is MKUserLocation {
+//                   // Return nil for the user's location annotation
+//                   return nil
+//               }
+//               
+//               // Use the custom annotation view for your custom annotations
+//               if let customAnnotation = annotation as? CustomAnnotation {
+//                   let identifier = "CustomAnnotationView"
+//                   var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? CustomAnnotationView
+//                   
+//                   if annotationView == nil {
+//                       annotationView = CustomAnnotationView(annotation: customAnnotation, reuseIdentifier: identifier)
+//                       annotationView?.canShowCallout = true
+//                   } else {
+//                       annotationView?.annotation = customAnnotation
+//                   }
+//                   
+//                   return annotationView
+//               }
+//               
+//               return nil
+//     }
+    
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let customAnnotation = view.annotation as? CustomAnnotation {
+            if let title = customAnnotation.title {
+                showDirectionsToHospital(cordinate: customAnnotation.coordinate, title: title)
+            }
+        }
+    }
+        
+    
+    // MARK: - CLLocationManagerDelegate
+        
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//            if let location = locations.last{
+//                let center = CLLocationCoordinate2D(latitude: 23.2294, longitude: 72.652)
+//                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0))
+//                self.mapView.setRegion(region, animated: true)
+//            }
+        }
+        
+        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print("Location manager error: \(error.localizedDescription)")
+        }
+    
+    func showDirectionsToHospital(cordinate: CLLocationCoordinate2D, title: String) {
+        // You can present a UIAlertController with options for directions and hospital info
+        let alertController = UIAlertController(title: title, message: "What would you like to do?", preferredStyle: .actionSheet)
+        
+        // Directions option
+        alertController.addAction(UIAlertAction(title: "Get Directions", style: .default) { _ in
+            // Open Apple Maps with directions to the hospital
+            let placemark = MKPlacemark(coordinate: cordinate)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = title
+            mapItem.openInMaps()
+        })
+        
+        // Hospital info option
+        alertController.addAction(UIAlertAction(title: "Hospital Info", style: .default) { _ in
+            // Present hospital information view or screen
+            self.presentHospitalInfo(titleValue:title)
+        })
+        
+        // Cancel option
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentHospitalInfo(titleValue:String) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:  "HospitalInfo" ) as! HospitalInfo
+                
+        vc.titleValue = titleValue
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    
+    func getHospitalList(){
+
+        FireStoreManager.shared.getHospital { querySnapshot in
+            var itemsArray = [String:String]()
+            
+            for (_,document) in querySnapshot.documents.enumerated() {
+                itemsArray.updateValue(document.data()["hospitalName"] as! String, forKey: "hospitalName")
+                itemsArray.updateValue(document.data()["latitude"] as! String, forKey: "latitude")
+                itemsArray.updateValue(document.data()["longitude"] as! String, forKey: "longitude")
+
+                self.hospitalData.append(itemsArray)
+            }
+            
+            print(self.hospitalData)
+            if self.hospitalData.count != 0 {
+                self.updateMapView()
+            }
+        }
+        
+    }
+
+    func updateMapView(){
+        let allAnnotations = mapView.annotations
+        mapView.removeAnnotations(allAnnotations)
+        if searchBool{
+            for item in self.filterList {
+                let lat = Double(item["latitude"] ?? "0.0") ?? 0.0
+                let long = Double(item["longitude"] ?? "0.0") ?? 0.0
+                let annotation =  CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: item["hospitalName"], image: UIImage(named: "pin"))
+                
+                mapView.addAnnotation(annotation)
+                
+                let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0))
+                mapView.setRegion(initialRegion, animated: true)
+                
+            }
+        } else{
+            for item in self.hospitalData {
+                let lat = Double(item["latitude"] ?? "0.0") ?? 0.0
+                let long = Double(item["longitude"] ?? "0.0") ?? 0.0
+                let annotation =  CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: item["hospitalName"], image: UIImage(named: "pin"))
+                
+                mapView.addAnnotation(annotation)
+                
+                let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0))
+                mapView.setRegion(initialRegion, animated: true)
+                
+            }
+        }
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Implement filtering logic here
+        let searchText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        filterData(withSearchText: searchText)
+        return true
+    }
+    
+    func filterData(withSearchText searchText: String) {
+        
+        if searchText.isEmpty {
+            // If the search text is empty, show all items
+            filterList = hospitalData
+            searchBool = false
+        } else {
+            // Use a case-insensitive search to filter items by name
+            filterList = hospitalData.filter { item in
+                return item["hospitalName"]!.lowercased().contains(searchText.lowercased())
+                   }
+            searchBool = true
+        }
+        updateMapView()
+        print(filterList)
+    }
+}
+
