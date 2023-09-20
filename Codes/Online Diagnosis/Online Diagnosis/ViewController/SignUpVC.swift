@@ -31,7 +31,9 @@ class SignUpVC: UIViewController {
     
     @IBAction func onSignUp(_ sender: Any) {
         if validate(){
-            FireStoreManager.shared.signUp(firstName: self.firstname.text ?? "", middleName: self.middlename.text ?? "", lastName: self.lastname.text ?? "", dob: self.dob.text ?? "", gender: gender, email: self.email.text ?? "", password: self.password.text ?? "", userType: "Patient")
+           // FireStoreManager.shared.doctorsignUp(firstName: "Dr. Mohan", middleName: "Hindupur", lastName: "Assefa", dob: "19-12-1990", gender: "male", email: "Mohan@gmail.com", password: "123456", userType: "Doctor", specialist : "Cardiology", expert: "6 years", rating: "3.9", achievement : "Operational surgery", awards: "Gold Medlist - 2019", availableHours : ["Monday 10 am - 4 pm","Tuesday 11 am - 5 pm","Wednesday 2 pm - 5 pm","Thursday 10 am - 6 pm","Friday 10 am - 5 pm","Saturday 10 am - 6 pm","Sunday 8 am - 12 pm"])
+
+            FireStoreManager.shared.signUp(firstName: self.firstname.text ?? "", middleName: self.middlename.text ?? "", lastName: self.lastname.text ?? "", dob: self.dob.text ?? "", gender: gender, email: self.email.text?.lowercased() ?? "", password: self.password.text ?? "", userType: "Patient")
         }
         
     }
@@ -160,3 +162,5 @@ extension SignUpVC{
         }
 
 }
+
+

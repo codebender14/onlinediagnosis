@@ -17,7 +17,7 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.setValue("Launch", forKey: "LaunchScreen")
+        UserDefaults.standard.set(true, forKey: "FirstTimeLogin")
         self.navigationController?.isNavigationBarHidden = true
         slides = createSlides()
         setupSlideScrollView(slides: slides)

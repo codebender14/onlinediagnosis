@@ -6,7 +6,7 @@ target 'Online Diagnosis' do
   use_frameworks!
 
   pod 'IQKeyboardManagerSwift', '6.3.0'
-
+  pod 'DropDown', '2.3.13'
   # Pods for Online Diagnosis
 
 end

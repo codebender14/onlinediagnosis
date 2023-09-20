@@ -1,16 +1,19 @@
 
 import UIKit
+import DropDown
 
 class HospitalInfo: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchDoctor: UITextField!
     @IBOutlet weak var hospitalName: UILabel!
-    
+
     var doctorList : [doctorDetail] = []
+    var specializationList : [String] = []
     var filterList : [doctorDetail] = []
     var searchBool = false
     var titleValue = ""
-    
+    let dropDown = DropDown()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +23,7 @@ class HospitalInfo: UIViewController, UITextFieldDelegate  {
         
         self.getDoctorList(hospitalName: titleValue)
     }
-    
+        
     func getDoctorList(hospitalName: String){
         FireStoreManager.shared.getAllDoctorList(hospitalName: hospitalName) { querySnapshot in
             
@@ -31,7 +34,6 @@ class HospitalInfo: UIViewController, UITextFieldDelegate  {
                     let item = try document.data(as: hospitalArray.self)
                     self.hospitalName.text = item.hospitalName ?? ""
                     itemsArray.append(item.doctorList ?? [])
-                    
                     print(itemsArray)
                     
                 }catch let error {
@@ -41,6 +43,9 @@ class HospitalInfo: UIViewController, UITextFieldDelegate  {
             if itemsArray.count > 0{
                 self.doctorList = itemsArray[1]
             }
+            
+            self.specializationList = self.doctorList.map {$0.specialist ?? ""}
+            print(self.specializationList)
             self.tableView.reloadData()
             
         }
@@ -89,7 +94,7 @@ extension HospitalInfo: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: TableViewCell.self), for: indexPath) as! TableViewCell
         if searchBool{
             let data = self.filterList[indexPath.row]
-            cell.titleLbl.text = "Name: \(data.name ?? "")"
+            cell.titleLbl.text = "Name: \(data.firstName ?? "") \(data.lastName ?? "")"
             cell.speciality.text = "Specialization : \(data.specialist ?? "")"
             cell.dob.text = "Dob : \(data.dob ?? "")"
             cell.expert.text = "Expertise : \(data.expert ?? "")"
@@ -97,7 +102,7 @@ extension HospitalInfo: UITableViewDelegate, UITableViewDataSource {
             cell.rating.text = "Rating : \(data.rating ?? "")"
         } else{
             let data = self.doctorList[indexPath.row]
-            cell.titleLbl.text = "Name: \(data.name ?? "")"
+            cell.titleLbl.text = "Name: \(data.firstName ?? "") \(data.lastName ?? "")"
             cell.speciality.text = "Specialization : \(data.specialist ?? "")"
             cell.dob.text = "Dob : \(data.dob ?? "")"
             cell.expert.text = "Expertise : \(data.expert ?? "")"
@@ -109,7 +114,7 @@ extension HospitalInfo: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 225
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -131,5 +136,44 @@ extension HospitalInfo: UITableViewDelegate, UITableViewDataSource {
 
 
 
+    }
+}
+
+extension HospitalInfo {
+    //MARK:- Drop Down Region Methods
+    func showDropDownMenu(textField:UITextField, dataSource:[String]) {
+        
+        self.view.endEditing(true)
+        
+        dropDown.anchorView = textField
+        dropDown.dataSource = dataSource
+        dropDown.backgroundColor = .white
+        dropDown.textColor = .black
+        
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.topOffset = CGPoint(x: 0, y:-(dropDown.anchorView?.plainView.bounds.height)! )
+        
+        self.dropDown.selectionAction = { (index: Int, item: String) in
+            textField.placeholder = "Specialization"
+            textField.text = item
+//            textField.textFieldDidChange(textField)
+            let doctorSpecialiation = self.specializationList[index]
+            self.filterData(withSearchText: doctorSpecialiation)
+        }
+        dropDown.bounds.size.height = 150
+        
+        DispatchQueue.main.async {
+            self.dropDown.show()
+        }
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == searchDoctor{
+            showDropDownMenu(textField: searchDoctor, dataSource: self.specializationList)
+            return false
+            
+        } else {
+            return true
+        }
     }
 }

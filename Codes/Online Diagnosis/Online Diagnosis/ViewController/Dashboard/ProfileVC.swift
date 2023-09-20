@@ -11,11 +11,13 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var male: UIButton!
     @IBOutlet weak var female: UIButton!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var medicalHistoryView: UIView!
     let datePicker = UIDatePicker()
 
     var gender = ""
     var password = ""
     var editBool = false
+    var appointmentData : [AppointmentDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,11 @@ class ProfileVC: UIViewController {
         
         female.setImage(UIImage(named: "circle"), for: .normal)
         female.setImage(UIImage(named: "fillCircle"), for: .selected)
+        
+        let userType = UserDefaultsManager.shared.getUserType()
+        if userType == UserType.doctor.rawValue{
+            self.medicalHistoryView.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +95,7 @@ class ProfileVC: UIViewController {
                     self.dob.text = item.dob ?? ""
                     self.email.text = item.email ?? ""
 
+                    self.appointmentData = item.AppointmentDetail ?? []
                     self.gender = item.gender ?? ""
                     self.password = item.password ?? ""
                     if item.gender == "male" {
@@ -106,13 +114,27 @@ class ProfileVC: UIViewController {
     @IBAction func onChangePassword(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier:  "ChangePassword" ) as! ChangePassword
                 
+        vc.password = self.password
+        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    @IBAction func onAppointmentHistory(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:  "AppointmentHistory" ) as! AppointmentHistory
+                
+        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    @IBAction func onMedicalHistory(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:  "MedicalHistory" ) as! MedicalHistory
+                
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
 
     @IBAction func onSignOut(_ sender: Any) {
-        UserDefaultsManager.shared.clearUserDefaults()
-        UserDefaults.standard.removeObject(forKey: "documentId")
+        UserDefaultsManager.shared.clearData()
         SceneDelegate.shared!.loginCheckOrRestart()
     }
     
@@ -212,4 +234,37 @@ extension ProfileVC {
             self.view.endEditing(true)
         }
 
+}
+
+
+// Add Doctor in Hospital in Firestore
+
+extension ProfileVC {
+    func addDoctorInHospital(){
+        
+        FireStoreManager.shared.getProfile(email: UserDefaultsManager.shared.getEmail()) { querySnapshot in
+            
+            print(querySnapshot.documents)
+            for (_,document) in querySnapshot.documents.enumerated() {
+                do {
+                    
+                    let item = try document.data(as: UserDataModel.self)
+
+                    let documentid = UserDefaults.standard.string(forKey: "documentId") ?? ""
+                    
+                    let userdata = ["firstName": item.firstName, "middleName": item.middleName, "lastName": item.lastName, "dob": item.dob, "gender": item.gender, "email": item.email, "userType": "Doctor", "specialist" : item.specialist, "expert": item.expert, "rating": item.rating, "achievement" : item.achievement, "awards": item.awards, "availableHours" : item.availableHours] as [String : Any]
+                    
+                    FireStoreManager.shared.updateHospitalProfile(userData: userdata) { success in
+                        if success {
+                            showAlerOnTop(message: "Profile Updated Successfully")
+                        }
+                    }
+                    
+                }catch let error {
+                    print(error)
+                }
+            }
+        
+        }
+    }
 }

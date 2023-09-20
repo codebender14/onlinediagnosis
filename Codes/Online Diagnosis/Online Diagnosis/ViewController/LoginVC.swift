@@ -25,17 +25,19 @@ class LoginVC: UIViewController {
             }
             else{
                 // Sign in with an existing user
-                FireStoreManager.shared.login(email: email.text ?? "", password: password.text ?? "") { success in
+                FireStoreManager.shared.login(email: email.text?.lowercased() ?? "", password: password.text ?? "") { success in
                     if success{
-                        let checkLaunch = UserDefaults.standard.string(forKey: "LaunchScreen")
-                        if checkLaunch == "Launch"{
+                        if UserDefaults.standard.bool(forKey: "FirstTimeLogin") {
                             SceneDelegate.shared?.loginCheckOrRestart()
                         } else {
                             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "LaunchViewController" ) as! LaunchViewController
                             
                             self.navigationController?.pushViewController(vc, animated: true)
+
                         }
+                        
                     }
+                    
                 }
             }
     }

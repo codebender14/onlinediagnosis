@@ -10,13 +10,19 @@ struct hospitalArray: Codable{
 }
 
 struct doctorDetail: Codable{
-    let name: String?
+    let firstName: String?
+    let lastName: String?
+    let middleName: String?
     let specialist: String?
     let age: String?
     let dob: String?
     let expert: String?
     let gender: String?
     let rating: String?
+    let achievement : String?
+    let awards : String?
+    let email : String?
+    let availableHours: [String]?
 
 }
 
@@ -26,6 +32,7 @@ class AppointmentModel {
     let pLastname: String?
     let pMiddlename: String?
     let doctorName: String?
+    let doctorEmail: String?
     let hospitalName: String?
     let medicalEmergency: String?
     let date: String?
@@ -38,6 +45,7 @@ class AppointmentModel {
          pLastname: String?,
          pMiddlename: String?,
          doctorName: String?,
+         doctorEmail: String?,
          hospitalName: String?,
          medicalEmergency: String?,
          date: String?,
@@ -55,6 +63,7 @@ class AppointmentModel {
         self.time = time
         self.medicalHistory = medicalHistory
         self.status = status
+        self.doctorEmail = doctorEmail
     }
 }
 
@@ -67,6 +76,40 @@ struct UserDataModel: Codable {
     let gender: String?
     let password: String?
     let userType: String?
+    let specialist : String?
+    let expert : String?
+    let rating : String?
+    let achievement : String?
+    let awards : String?
+    let availableHours : [String]?
+    let AppointmentDetail : [AppointmentDetail]?
+    let ApproveAppointmentDetail : [ApproveAppointmentDetail]?
 }
 
+struct AppointmentDetail: Codable {
+    let patientId: String?
+    let pFirstname: String?
+    let pLastname: String?
+    let pMiddlename: String?
+    let doctorName: String?
+    let hospitalName: String?
+    let medicalEmergency: String?
+    let date: String?
+    let time: String?
+    let medicalHistory: Bool?
+    let status: String?
+}
 
+struct ApproveAppointmentDetail: Codable {
+    let patientId: String?
+    let pFirstname: String?
+    let pLastname: String?
+    let pMiddlename: String?
+    let doctorName: String?
+    let hospitalName: String?
+    let medicalEmergency: String?
+    let date: String?
+    let time: String?
+    let medicalHistory: Bool?
+    let status: String?
+}

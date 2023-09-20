@@ -9,6 +9,16 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var expert: UILabel!
     @IBOutlet weak var dob: UILabel!
     @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var doctorName: UILabel!
+    @IBOutlet weak var date: UITextField!
+    @IBOutlet weak var time: UITextField!
+
+    @IBOutlet weak var patientMedicalView: UIView!
+    @IBOutlet weak var AcceptView: UIView!
+
+    @IBOutlet weak var acceptBtn: UIButton!
+    @IBOutlet weak var rejectBtn: UIButton!
+    @IBOutlet weak var viewBtn: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -21,7 +21,7 @@ class DoctorDetailVC: UIViewController {
 
     var hospitalName = ""
     
-    var availableHours = ["Monday 10 am - 2 pm","Tuesday 11 am - 5 pm","Wednesday 8 am - 2 pm","Thursday 12 am - 4 pm","Friday 9 am - 12 pm","Saturday 8 am - 6 pm","Sunday 10 am - 12 pm"]
+    var availableHours = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +35,18 @@ class DoctorDetailVC: UIViewController {
 
 
     func setupView(){
-        self.name.text = doctordetail?.name
+        self.name.text = "\(doctordetail?.firstName ?? "") \(doctordetail?.lastName ?? "")"
         self.specialization.text = "Specialization : \(doctordetail.specialist ?? "")"
         self.dob.text = "Dob : \(doctordetail.dob ?? "")"
         self.expert.text = "Expertise : \(doctordetail.expert ?? "")"
-        self.age.text = "age : \(doctordetail.age ?? "")"
+//        self.age.text = "age : \(doctordetail.age ?? "")"
         self.gender.text = "Gender : \(doctordetail.gender ?? "")"
-        
+        self.achievement.text = doctordetail.achievement ?? ""
+        self.awards.text = doctordetail.awards ?? ""
+
         self.date.inputView =  datePicker
         self.time.inputView =  datePicker
+        self.availableHours = doctordetail.availableHours ?? ["Monday 10 am - 2 pm","Tuesday 11 am - 5 pm","Wednesday 8 am - 2 pm","Thursday 12 am - 4 pm","Friday 9 am - 12 pm","Saturday 8 am - 6 pm","Sunday 10 am - 12 pm"]
         self.showDatePicker()
         self.showOpeningTimePicker()
 
@@ -60,9 +63,11 @@ class DoctorDetailVC: UIViewController {
             return
         }
         else {
-            let data = AppointmentModel(patientId: "", pFirstname: "", pLastname: "", pMiddlename: "", doctorName: self.doctordetail.name, hospitalName: self.hospitalName, medicalEmergency: "", date: self.date.text ?? "", time: self.time.text ?? "", medicalHistory: false, status: "Pending")
+            let documentId = UserDefaultsManager.shared.getDocumentId()
+            let data = AppointmentModel(patientId: documentId, pFirstname: "", pLastname: "", pMiddlename: "", doctorName: self.name.text ?? "", doctorEmail: doctordetail.email ?? "", hospitalName: self.hospitalName, medicalEmergency: "", date: self.date.text ?? "", time: self.time.text ?? "", medicalHistory: false, status: "Pending")
             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
             vc.appointmentData = data
+            vc.viewAppointment = false
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

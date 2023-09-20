@@ -33,6 +33,11 @@
 		803FB7102AAF4E440025EA09 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 803FB70F2AAF4E440025EA09 /* FirebaseFirestore */; };
 		803FB7122AAF4E440025EA09 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 803FB7112AAF4E440025EA09 /* FirebaseFirestoreSwift */; };
 		803FB7142AAF4E440025EA09 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 803FB7132AAF4E440025EA09 /* FirebaseStorage */; };
+		808254782AB61F1400312E7D /* AppointmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808254772AB61F1400312E7D /* AppointmentHistory.swift */; };
+		8082547A2AB628B400312E7D /* MedicalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808254792AB628B400312E7D /* MedicalHistory.swift */; };
+		8082547C2AB771B000312E7D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547B2AB771B000312E7D /* TabBarController.swift */; };
+		8082547E2AB7791F00312E7D /* DoctorHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547D2AB7791F00312E7D /* DoctorHome.swift */; };
+		808254802AB7792900312E7D /* PatientHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547F2AB7792900312E7D /* PatientHome.swift */; };
 		80ABE5DE2AA8F52600117F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABE5DD2AA8F52600117F41 /* AppDelegate.swift */; };
 		80ABE5E02AA8F52600117F41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABE5DF2AA8F52600117F41 /* SceneDelegate.swift */; };
 		80ABE5E52AA8F52600117F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ABE5E32AA8F52600117F41 /* Main.storyboard */; };
@@ -68,6 +73,11 @@
 		803FB7022AAF4C720025EA09 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		803FB7032AAF4C720025EA09 /* FireStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
 		803FB7042AAF4C720025EA09 /* ForgetPasswordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordManager.swift; sourceTree = "<group>"; };
+		808254772AB61F1400312E7D /* AppointmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentHistory.swift; sourceTree = "<group>"; };
+		808254792AB628B400312E7D /* MedicalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistory.swift; sourceTree = "<group>"; };
+		8082547B2AB771B000312E7D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8082547D2AB7791F00312E7D /* DoctorHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHome.swift; sourceTree = "<group>"; };
+		8082547F2AB7792900312E7D /* PatientHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHome.swift; sourceTree = "<group>"; };
 		80ABE5DA2AA8F52600117F41 /* Online Diagnosis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Diagnosis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ABE5DD2AA8F52600117F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ABE5DF2AA8F52600117F41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +150,10 @@
 				80285BD42AB35A8500E158B9 /* HospitalInfo.swift */,
 				80285BD92AB35CF800E158B9 /* DoctorDetailVC.swift */,
 				80285BDB2AB35D3400E158B9 /* BookAppointment.swift */,
+				808254772AB61F1400312E7D /* AppointmentHistory.swift */,
+				808254792AB628B400312E7D /* MedicalHistory.swift */,
+				8082547D2AB7791F00312E7D /* DoctorHome.swift */,
+				8082547F2AB7792900312E7D /* PatientHome.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 				80ABE5F42AAB221B00117F41 /* LaunchViewController.swift */,
 				80ABE5FE2AAB8AD800117F41 /* LoginVC.swift */,
 				80ABE6002AAB8AE700117F41 /* SignUpVC.swift */,
+				8082547B2AB771B000312E7D /* TabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -374,7 +389,9 @@
 				80285BC32AB30AB800E158B9 /* BackButton.swift in Sources */,
 				80285BCC2AB3200000E158B9 /* ButtonWithShadow.swift in Sources */,
 				80285BD72AB35B8300E158B9 /* TableViewCell.swift in Sources */,
+				8082547A2AB628B400312E7D /* MedicalHistory.swift in Sources */,
 				80285BCB2AB3200000E158B9 /* Extensions.swift in Sources */,
+				808254802AB7792900312E7D /* PatientHome.swift in Sources */,
 				80ABE5F32AAB14B000117F41 /* ButtonExtension.swift in Sources */,
 				80ABE5F92AAB225700117F41 /* Slide.swift in Sources */,
 				80285BCD2AB3200000E158B9 /* DesignableView.swift in Sources */,
@@ -384,7 +401,10 @@
 				80ABE5FC2AAB8A8000117F41 /* InitialVC.swift in Sources */,
 				803FB7072AAF4C720025EA09 /* ForgetPasswordManager.swift in Sources */,
 				803FB7052AAF4C720025EA09 /* UserDefaultsManager.swift in Sources */,
+				8082547C2AB771B000312E7D /* TabBarController.swift in Sources */,
 				803FB6FC2AAF4BC20025EA09 /* ConnectVC.swift in Sources */,
+				8082547E2AB7791F00312E7D /* DoctorHome.swift in Sources */,
+				808254782AB61F1400312E7D /* AppointmentHistory.swift in Sources */,
 				80285BDC2AB35D3400E158B9 /* BookAppointment.swift in Sources */,
 				80ABE5DE2AA8F52600117F41 /* AppDelegate.swift in Sources */,
 				80ABE5E02AA8F52600117F41 /* SceneDelegate.swift in Sources */,

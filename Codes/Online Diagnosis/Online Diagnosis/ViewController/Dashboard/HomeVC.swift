@@ -2,18 +2,31 @@
 
 import UIKit
 
+enum UserType : String {
+    case patient = "Patient"
+    case doctor = "Doctor"
+}
+
 class HomeVC: UIViewController {
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var doctorContainer: UIView!
+    @IBOutlet weak var patientContainer: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        username.text = UserDefaultsManager.shared.getName()
         
-        // Do any additional setup after loading the view.
+        let userType = UserDefaultsManager.shared.getUserType()
+        
+        if userType == UserType.patient.rawValue {
+            self.patientContainer.isHidden = false
+            self.doctorContainer.isHidden = true
+        } else {
+            self.patientContainer.isHidden = true
+            self.doctorContainer.isHidden = false
+        }
     }
     
-
+   
     /*
     // MARK: - Navigation
 
