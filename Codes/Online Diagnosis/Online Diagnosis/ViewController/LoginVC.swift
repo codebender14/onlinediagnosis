@@ -48,4 +48,20 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func onForgotPassword(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier:  "ForgotPassword" ) as! ForgotPassword
+                
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onShowHidePassword(_ sender: UIButton) {
+        
+        let buttonImageName = password.isSecureTextEntry ? "eye" : "eye.slash"
+            if let buttonImage = UIImage(systemName: buttonImageName) {
+                sender.setImage(buttonImage, for: .normal)
+        }
+        
+        self.password.isSecureTextEntry.toggle()
+       
+    }
 }

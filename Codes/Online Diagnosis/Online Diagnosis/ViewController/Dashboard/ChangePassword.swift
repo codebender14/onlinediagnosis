@@ -56,4 +56,34 @@ class ChangePassword: UIViewController {
         return true
     }
     
+    
+    @IBAction func onShowHidePassword(_ sender: UIButton) {
+        
+        if(sender.tag == 1) {
+            let buttonImageName = oldpassword.isSecureTextEntry ? "eye" : "eye.slash"
+                if let buttonImage = UIImage(systemName: buttonImageName) {
+                    sender.setImage(buttonImage, for: .normal)
+            }
+            self.oldpassword.isSecureTextEntry.toggle()
+        }
+       
+        if(sender.tag == 2) {
+            let buttonImageName = newpassword.isSecureTextEntry ? "eye" : "eye.slash"
+                if let buttonImage = UIImage(systemName: buttonImageName) {
+                    sender.setImage(buttonImage, for: .normal)
+            }
+            self.newpassword.isSecureTextEntry.toggle()
+        }
+        
+        if(sender.tag == 3) {
+            let buttonImageName = confirmPassword.isSecureTextEntry ? "eye" : "eye.slash"
+                if let buttonImage = UIImage(systemName: buttonImageName) {
+                    sender.setImage(buttonImage, for: .normal)
+            }
+            self.confirmPassword.isSecureTextEntry.toggle()
+        }
+       
+    }
+    
+    
 }

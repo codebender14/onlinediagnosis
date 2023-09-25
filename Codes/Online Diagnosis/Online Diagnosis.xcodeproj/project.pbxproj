@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0053115D2AC0C676007A1487 /* ChatList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005311522AC0C676007A1487 /* ChatList.xib */; };
+		0053115E2AC0C676007A1487 /* CometChatReceiverTextMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005311542AC0C676007A1487 /* CometChatReceiverTextMessageBubble.swift */; };
+		0053115F2AC0C676007A1487 /* CometChatReceiverTextMessageBubble.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005311552AC0C676007A1487 /* CometChatReceiverTextMessageBubble.xib */; };
+		005311602AC0C676007A1487 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005311562AC0C676007A1487 /* ChatList.swift */; };
+		005311612AC0C676007A1487 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005311572AC0C676007A1487 /* ChatVC.swift */; };
+		005311622AC0C676007A1487 /* CometChatSenderTextMessageBubble.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005311592AC0C676007A1487 /* CometChatSenderTextMessageBubble.xib */; };
+		005311632AC0C676007A1487 /* CometChatSenderTextMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053115A2AC0C676007A1487 /* CometChatSenderTextMessageBubble.swift */; };
+		005311642AC0C676007A1487 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053115B2AC0C676007A1487 /* ChatUser.swift */; };
+		005311652AC0C676007A1487 /* TextViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053115C2AC0C676007A1487 /* TextViewWithPlaceholder.swift */; };
 		11430714920ABA4BC2B79AF0 /* Pods_Online_Diagnosis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33AC43D52A423F4DB8A0989F /* Pods_Online_Diagnosis.framework */; };
 		80285BC12AB308F800E158B9 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285BC02AB308F800E158B9 /* ChangePassword.swift */; };
 		80285BC32AB30AB800E158B9 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285BC22AB30AB800E158B9 /* BackButton.swift */; };
@@ -38,6 +47,8 @@
 		8082547C2AB771B000312E7D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547B2AB771B000312E7D /* TabBarController.swift */; };
 		8082547E2AB7791F00312E7D /* DoctorHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547D2AB7791F00312E7D /* DoctorHome.swift */; };
 		808254802AB7792900312E7D /* PatientHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8082547F2AB7792900312E7D /* PatientHome.swift */; };
+		808254822ABA23F400312E7D /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808254812ABA23F400312E7D /* ForgotPassword.swift */; };
+		808254842ABDC2B500312E7D /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808254832ABDC2B500312E7D /* CalendarManager.swift */; };
 		80ABE5DE2AA8F52600117F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABE5DD2AA8F52600117F41 /* AppDelegate.swift */; };
 		80ABE5E02AA8F52600117F41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABE5DF2AA8F52600117F41 /* SceneDelegate.swift */; };
 		80ABE5E52AA8F52600117F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ABE5E32AA8F52600117F41 /* Main.storyboard */; };
@@ -53,6 +64,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		005311522AC0C676007A1487 /* ChatList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatList.xib; sourceTree = "<group>"; };
+		005311542AC0C676007A1487 /* CometChatReceiverTextMessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometChatReceiverTextMessageBubble.swift; sourceTree = "<group>"; };
+		005311552AC0C676007A1487 /* CometChatReceiverTextMessageBubble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CometChatReceiverTextMessageBubble.xib; sourceTree = "<group>"; };
+		005311562AC0C676007A1487 /* ChatList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		005311572AC0C676007A1487 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		005311592AC0C676007A1487 /* CometChatSenderTextMessageBubble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CometChatSenderTextMessageBubble.xib; sourceTree = "<group>"; };
+		0053115A2AC0C676007A1487 /* CometChatSenderTextMessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CometChatSenderTextMessageBubble.swift; sourceTree = "<group>"; };
+		0053115B2AC0C676007A1487 /* ChatUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		0053115C2AC0C676007A1487 /* TextViewWithPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		33AC43D52A423F4DB8A0989F /* Pods_Online_Diagnosis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Diagnosis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80285BC02AB308F800E158B9 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		80285BC22AB30AB800E158B9 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -78,6 +98,8 @@
 		8082547B2AB771B000312E7D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8082547D2AB7791F00312E7D /* DoctorHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHome.swift; sourceTree = "<group>"; };
 		8082547F2AB7792900312E7D /* PatientHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHome.swift; sourceTree = "<group>"; };
+		808254812ABA23F400312E7D /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		808254832ABDC2B500312E7D /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		80ABE5DA2AA8F52600117F41 /* Online Diagnosis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Diagnosis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ABE5DD2AA8F52600117F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ABE5DF2AA8F52600117F41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +136,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005311512AC0C676007A1487 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				005311522AC0C676007A1487 /* ChatList.xib */,
+				005311532AC0C676007A1487 /* OtherUserTextMessageCell */,
+				005311562AC0C676007A1487 /* ChatList.swift */,
+				005311572AC0C676007A1487 /* ChatVC.swift */,
+				005311582AC0C676007A1487 /* MyTextMessageCell */,
+				0053115B2AC0C676007A1487 /* ChatUser.swift */,
+				0053115C2AC0C676007A1487 /* TextViewWithPlaceholder.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		005311532AC0C676007A1487 /* OtherUserTextMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				005311542AC0C676007A1487 /* CometChatReceiverTextMessageBubble.swift */,
+				005311552AC0C676007A1487 /* CometChatReceiverTextMessageBubble.xib */,
+			);
+			path = OtherUserTextMessageCell;
+			sourceTree = "<group>";
+		};
+		005311582AC0C676007A1487 /* MyTextMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				005311592AC0C676007A1487 /* CometChatSenderTextMessageBubble.xib */,
+				0053115A2AC0C676007A1487 /* CometChatSenderTextMessageBubble.swift */,
+			);
+			path = MyTextMessageCell;
+			sourceTree = "<group>";
+		};
 		2DA2B43C0B735F61830EDF47 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +215,7 @@
 		803FB7012AAF4C5D0025EA09 /* FireBaseManager */ = {
 			isa = PBXGroup;
 			children = (
+				808254832ABDC2B500312E7D /* CalendarManager.swift */,
 				803FB7032AAF4C720025EA09 /* FireStoreManager.swift */,
 				803FB7042AAF4C720025EA09 /* ForgetPasswordManager.swift */,
 				803FB7022AAF4C720025EA09 /* UserDefaultsManager.swift */,
@@ -229,6 +284,7 @@
 		80ABE5FD2AAB8A8B00117F41 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				005311512AC0C676007A1487 /* Chat */,
 				80285BD82AB35B8700E158B9 /* CustomCell */,
 				80285BC22AB30AB800E158B9 /* BackButton.swift */,
 				803FB6F62AAF4B9C0025EA09 /* Dashboard */,
@@ -237,6 +293,7 @@
 				80ABE5FE2AAB8AD800117F41 /* LoginVC.swift */,
 				80ABE6002AAB8AE700117F41 /* SignUpVC.swift */,
 				8082547B2AB771B000312E7D /* TabBarController.swift */,
+				808254812ABA23F400312E7D /* ForgotPassword.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -324,7 +381,10 @@
 				80ABE5E72AA8F52700117F41 /* Assets.xcassets in Resources */,
 				80285BD12AB343D300E158B9 /* GoogleService-Info.plist in Resources */,
 				80ABE5E52AA8F52600117F41 /* Main.storyboard in Resources */,
+				005311622AC0C676007A1487 /* CometChatSenderTextMessageBubble.xib in Resources */,
 				80ABE5F82AAB225700117F41 /* Slide.xib in Resources */,
+				0053115D2AC0C676007A1487 /* ChatList.xib in Resources */,
+				0053115F2AC0C676007A1487 /* CometChatReceiverTextMessageBubble.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,15 +437,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005311612AC0C676007A1487 /* ChatVC.swift in Sources */,
 				803FB6F82AAF4BAC0025EA09 /* HomeVC.swift in Sources */,
 				803FB6FA2AAF4BB50025EA09 /* BookVC.swift in Sources */,
+				808254842ABDC2B500312E7D /* CalendarManager.swift in Sources */,
 				80285BD52AB35A8500E158B9 /* HospitalInfo.swift in Sources */,
 				803FB7062AAF4C720025EA09 /* FireStoreManager.swift in Sources */,
 				80ABE6012AAB8AE700117F41 /* SignUpVC.swift in Sources */,
 				80ABE5F52AAB221B00117F41 /* LaunchViewController.swift in Sources */,
 				80285BDA2AB35CF900E158B9 /* DoctorDetailVC.swift in Sources */,
+				005311652AC0C676007A1487 /* TextViewWithPlaceholder.swift in Sources */,
 				80285BDF2AB3744100E158B9 /* HospitalModel.swift in Sources */,
 				80ABE5FF2AAB8AD800117F41 /* LoginVC.swift in Sources */,
+				005311602AC0C676007A1487 /* ChatList.swift in Sources */,
 				80285BC32AB30AB800E158B9 /* BackButton.swift in Sources */,
 				80285BCC2AB3200000E158B9 /* ButtonWithShadow.swift in Sources */,
 				80285BD72AB35B8300E158B9 /* TableViewCell.swift in Sources */,
@@ -396,17 +460,21 @@
 				80ABE5F92AAB225700117F41 /* Slide.swift in Sources */,
 				80285BCD2AB3200000E158B9 /* DesignableView.swift in Sources */,
 				80285BC12AB308F800E158B9 /* ChangePassword.swift in Sources */,
+				808254822ABA23F400312E7D /* ForgotPassword.swift in Sources */,
 				803FB6FE2AAF4BCB0025EA09 /* ProfileVC.swift in Sources */,
+				005311642AC0C676007A1487 /* ChatUser.swift in Sources */,
 				80285BC52AB3154300E158B9 /* CustomAnnotation.swift in Sources */,
 				80ABE5FC2AAB8A8000117F41 /* InitialVC.swift in Sources */,
 				803FB7072AAF4C720025EA09 /* ForgetPasswordManager.swift in Sources */,
 				803FB7052AAF4C720025EA09 /* UserDefaultsManager.swift in Sources */,
+				005311632AC0C676007A1487 /* CometChatSenderTextMessageBubble.swift in Sources */,
 				8082547C2AB771B000312E7D /* TabBarController.swift in Sources */,
 				803FB6FC2AAF4BC20025EA09 /* ConnectVC.swift in Sources */,
 				8082547E2AB7791F00312E7D /* DoctorHome.swift in Sources */,
 				808254782AB61F1400312E7D /* AppointmentHistory.swift in Sources */,
 				80285BDC2AB35D3400E158B9 /* BookAppointment.swift in Sources */,
 				80ABE5DE2AA8F52600117F41 /* AppDelegate.swift in Sources */,
+				0053115E2AC0C676007A1487 /* CometChatReceiverTextMessageBubble.swift in Sources */,
 				80ABE5E02AA8F52600117F41 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

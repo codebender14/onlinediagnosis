@@ -5,77 +5,79 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4EE812EB-E764-438A-ACE0-D76FF060D5CC"
+            uuid = "C8798A5E-F749-4047-9846-6FE59ACA1559"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "732ECD68-2E01-48AB-ADE4-0284EEB7E8B2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "appointmentStatus(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C41269D-06EC-416D-96CB-82916EEDC40F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "updateAppointment(status:patientName:doctorName:documentId:tag:)"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "callFirebaseData(data:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4C41269D-06EC-416D-96CB-82916EEDC40F - 8d1ece617975bebc"
+                  uuid = "C8798A5E-F749-4047-9846-6FE59ACA1559 - 11dcd0bf744f08e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.DoctorHome.rejectAppointmentStatus(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Online_Diagnosis.BookAppointment.callFirebaseData(data: Online_Diagnosis.AppointmentModel) -&gt; ()"
                   moduleName = "Online Diagnosis"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
-                  offsetFromSymbolStart = "856">
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  uuid = "4C41269D-06EC-416D-96CB-82916EEDC40F - 7832bea50bf07e63"
+                  uuid = "C8798A5E-F749-4047-9846-6FE59ACA1559 - a5ac49d3b87efeef"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.DoctorHome.updateAppointment(status: Swift.String, patientName: Swift.String, doctorName: Swift.String, documentId: Swift.String, tag: Swift.Int) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Bool) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Online_Diagnosis.BookAppointment.callFirebaseData(data: Online_Diagnosis.AppointmentModel) -&gt; ()"
                   moduleName = "Online Diagnosis"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "213"
-                  endingLineNumber = "213"
-                  offsetFromSymbolStart = "4464">
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "C8798A5E-F749-4047-9846-6FE59ACA1559 - 104f61174f9826f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Online_Diagnosis.BookAppointment.callFirebaseData(data: Online_Diagnosis.AppointmentModel) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "2544">
+               </Location>
+               <Location
+                  uuid = "C8798A5E-F749-4047-9846-6FE59ACA1559 - 11dcd0bf744f0ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Online_Diagnosis.BookAppointment.callFirebaseData(data: Online_Diagnosis.AppointmentModel) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -83,62 +85,126 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "686455C0-B6AD-4EB0-9F06-B02634D77247"
+            uuid = "6FD2E70F-DBDF-44EA-B3F7-C4E833DA5197"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "viewApproveAppointementData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CD1B2C7-57F2-41F1-99A9-44D1C399F23C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "pendingAppointmentData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0CD1B2C7-57F2-41F1-99A9-44D1C399F23C - 2eb9794c998ba87f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.BookAppointment.pendingAppointmentData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "4568">
+               </Location>
+               <Location
+                  uuid = "0CD1B2C7-57F2-41F1-99A9-44D1C399F23C - 2eb9794c998ba87f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.BookAppointment.pendingAppointmentData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "3568">
+               </Location>
+               <Location
+                  uuid = "0CD1B2C7-57F2-41F1-99A9-44D1C399F23C - 2eb9794c998ba87f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.BookAppointment.pendingAppointmentData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "3572">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E02FC255-2DE5-4412-9C85-F381B818E8FB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
-            landmarkName = "updateAppointmentArrayValuesByKeys(documentID:arrayField:indexToUpdate:newValue:completion:)"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
+            landmarkName = "approvePatientAppointment(status:patientID:bookingDate:email:data:completionHandler:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "686455C0-B6AD-4EB0-9F06-B02634D77247 - 9ded8202893989ff"
+                  uuid = "E02FC255-2DE5-4412-9C85-F381B818E8FB - 44c97ce4a1f36808"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentArrayValuesByKeys(documentID: Swift.String, arrayField: Swift.String, indexToUpdate: Swift.Int, newValue: Any, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  symbolName = "Online_Diagnosis.FireStoreManager.approvePatientAppointment(patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "Online Diagnosis"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "397"
-                  endingLineNumber = "397"
-                  offsetFromSymbolStart = "980">
+                  startingLineNumber = "627"
+                  endingLineNumber = "627"
+                  offsetFromSymbolStart = "3020">
                </Location>
                <Location
-                  uuid = "686455C0-B6AD-4EB0-9F06-B02634D77247 - 9ded8202893989ff"
+                  uuid = "E02FC255-2DE5-4412-9C85-F381B818E8FB - f61055bd812e9823"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentArrayValuesByKeys(documentID: Swift.String, arrayField: Swift.String, indexToUpdate: Swift.Int, newValue: Any, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  symbolName = "Online_Diagnosis.FireStoreManager.approvePatientAppointment(status: Swift.String, patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "Online Diagnosis"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "397"
-                  endingLineNumber = "397"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  uuid = "686455C0-B6AD-4EB0-9F06-B02634D77247 - 9ded8202893989de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentArrayValuesByKeys(documentID: Swift.String, arrayField: Swift.String, indexToUpdate: Swift.Int, newValue: Any, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "398"
-                  endingLineNumber = "398"
-                  offsetFromSymbolStart = "324">
+                  startingLineNumber = "627"
+                  endingLineNumber = "627"
+                  offsetFromSymbolStart = "2944">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -146,545 +212,447 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ABDB11B6-11C1-4F71-A5A6-407724D65D81"
+            uuid = "CB253D61-42C2-4733-A11C-E2519EAFE7ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "632"
+            endingLineNumber = "632"
+            landmarkName = "approvePatientAppointment(status:patientID:bookingDate:email:data:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB253D61-42C2-4733-A11C-E2519EAFE7ED - 60d49cff2ace6d1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.approvePatientAppointment(patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "1020">
+               </Location>
+               <Location
+                  uuid = "CB253D61-42C2-4733-A11C-E2519EAFE7ED - 86fab3637fe5297a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.approvePatientAppointment(status: Swift.String, patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "1020">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "823C1651-FE01-4DBF-AC54-0F14612F60B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
+            landmarkName = "approvePatientAppointment(status:patientID:bookingDate:email:data:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "823C1651-FE01-4DBF-AC54-0F14612F60B0 - 86fab3637fe52ae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.approvePatientAppointment(status: Swift.String, patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "635"
+                  endingLineNumber = "635"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  uuid = "823C1651-FE01-4DBF-AC54-0F14612F60B0 - c4a2628382a678fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.approvePatientAppointment(status: Swift.String, patientID: Swift.String, bookingDate: Swift.Double, email: Swift.String, data: Online_Diagnosis.AppointmentModel, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "636"
+                  endingLineNumber = "636"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A07E83DC-979C-4A8F-864C-AA712B2BB40B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "636"
+            endingLineNumber = "636"
+            landmarkName = "approvePatientAppointment(status:patientID:bookingDate:email:data:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC65510F-8039-490B-9ABF-A103E821E34B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
+            filePath = "Online Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "getMedicalData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC65510F-8039-490B-9ABF-A103E821E34B - 2c70efce5c291f5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "5040">
+               </Location>
+               <Location
+                  uuid = "FC65510F-8039-490B-9ABF-A103E821E34B - 2c70efce5c291fd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A085A129-3EAC-4F08-9094-75FC4682521B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "getMedicalData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A085A129-3EAC-4F08-9094-75FC4682521B - f54708634b7bd21e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.MedicalHistory.onMedicalHistory(Any) -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "A085A129-3EAC-4F08-9094-75FC4682521B - 2c70efce5c2914f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "6012">
+               </Location>
+               <Location
+                  uuid = "A085A129-3EAC-4F08-9094-75FC4682521B - 2c70efce5c29143a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "6056">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14818F69-7FD5-427F-A5C5-D41C590A90F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "getMedicalData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "14818F69-7FD5-427F-A5C5-D41C590A90F4 - 2c70efce5c291f5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "5040">
+               </Location>
+               <Location
+                  uuid = "14818F69-7FD5-427F-A5C5-D41C590A90F4 - 2c70efce5c291f90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.MedicalHistory.getMedicalData() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/MedicalHistory.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "994C5D93-B962-4E1F-88B1-B36C13CBED67"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F59FD679-F9B4-4AF7-9696-3BC7E775593F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "viewApproveAppointementData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62F9B147-4984-4C98-BD7C-791F63E2506E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/AppointmentHistory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1055BB7-47F0-49AC-91CD-D5D86CD62CAB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1055BB7-47F0-49AC-91CD-D5D86CD62CAB - e3d96f626a6f55a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.BookAppointment.viewDidLoad() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1624">
+               </Location>
+               <Location
+                  uuid = "F1055BB7-47F0-49AC-91CD-D5D86CD62CAB - e3d96f626a6f55a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Online_Diagnosis.BookAppointment.viewDidLoad() -&gt; ()"
+                  moduleName = "Online Diagnosis"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09A36FE7-8BCE-45DA-B7BE-2DEF591E72F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "getAppointmentList()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ABDB11B6-11C1-4F71-A5A6-407724D65D81 - 7e7a8c20a092b08d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.DoctorHome.getAppointmentList() -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "ABDB11B6-11C1-4F71-A5A6-407724D65D81 - 54d719a02af38632"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.DoctorHome.getAppointmentList() -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "ABDB11B6-11C1-4F71-A5A6-407724D65D81 - 54d719a02af38632"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRQuerySnapshot) -&gt; () in Online_Diagnosis.DoctorHome.getAppointmentList() -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "244">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BC3F61EA-2444-4E38-8142-7FBAD59F885C"
-            shouldBeEnabled = "No"
+            uuid = "4990DABA-21F2-4392-A306-2AE68BFAB673"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5B39EA2-E72D-4C86-9A3E-A20AD5FF419A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Online Diagnosis/ViewController/Dashboard/BookAppointment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "498638B0-D740-4F00-A0F3-A91AF2BAA706"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getAppointmentList()"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "viewMedicalReport(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E4907AE6-2BE2-45F2-A803-8D1E61321D51"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "updateAppointment(status:patientName:doctorName:documentId:tag:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E4907AE6-2BE2-45F2-A803-8D1E61321D51 - 7832bea50bf07fd8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.DoctorHome.updateAppointment(status: Swift.String, patientName: Swift.String, doctorName: Swift.String, documentId: Swift.String, tag: Swift.Int) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "4464">
-               </Location>
-               <Location
-                  uuid = "E4907AE6-2BE2-45F2-A803-8D1E61321D51 - 69f524c6789e19d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Online_Diagnosis.DoctorHome.updateAppointment(status: Swift.String, patientName: Swift.String, doctorName: Swift.String, documentId: Swift.String, tag: Swift.Int) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "219"
-                  endingLineNumber = "219"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B"
+            uuid = "F6564ED9-1D76-406D-B147-40BF79F36ED7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
+            filePath = "Online Diagnosis/ViewController/Dashboard/ConnectVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
-            landmarkName = "updateAppointmentOfPatient(email:documentid:userData:patientId:pFirstname:pLastname:pMiddlename:doctorName:doctorEmail:hospitalName:medicalEmergency:date:time:medicalHistory:status:updatedStatus:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - f9178b7e0afe6536"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "360"
-                  endingLineNumber = "360"
-                  offsetFromSymbolStart = "844">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 81474953fd81fc67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "544">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - f9178b7e0afe6536"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "360"
-                  endingLineNumber = "360"
-                  offsetFromSymbolStart = "836">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 81474953fd81fc67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "524">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 81474953fd81fc67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "532">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - f9178b7e0afe6536"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "360"
-                  endingLineNumber = "360"
-                  offsetFromSymbolStart = "828">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 81474953fd81fc67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "488">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 6f530d153f897717"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, updatedStatus: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "360"
-                  endingLineNumber = "360"
-                  offsetFromSymbolStart = "868">
-               </Location>
-               <Location
-                  uuid = "A6FB185D-81E6-4552-9A8E-FA3AF2B5F50B - 887543050fdc891c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, updatedStatus: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "361"
-                  endingLineNumber = "361"
-                  offsetFromSymbolStart = "532">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F427159C-C0AC-400A-97C9-75941514D51E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "updateAppointmentOfPatient(email:documentid:userData:patientId:pFirstname:pLastname:pMiddlename:doctorName:doctorEmail:hospitalName:medicalEmergency:date:time:medicalHistory:status:updatedStatus:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F427159C-C0AC-400A-97C9-75941514D51E - 81474953fd81fbd5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "3516">
-               </Location>
-               <Location
-                  uuid = "F427159C-C0AC-400A-97C9-75941514D51E - 81474953fd81fbd5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "3972">
-               </Location>
-               <Location
-                  uuid = "F427159C-C0AC-400A-97C9-75941514D51E - 81474953fd81fbd5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "5344">
-               </Location>
-               <Location
-                  uuid = "F427159C-C0AC-400A-97C9-75941514D51E - 81474953fd81fbd5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "5132">
-               </Location>
-               <Location
-                  uuid = "F427159C-C0AC-400A-97C9-75941514D51E - 887543050fdc8eae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, updatedStatus: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "379"
-                  endingLineNumber = "379"
-                  offsetFromSymbolStart = "5236">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6F29C3FD-1737-4C29-8E14-D109E954543E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "updateAppointmentOfPatient(email:documentid:userData:patientId:pFirstname:pLastname:pMiddlename:doctorName:doctorEmail:hospitalName:medicalEmergency:date:time:medicalHistory:status:updatedStatus:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6F29C3FD-1737-4C29-8E14-D109E954543E - 81474953fd81faeb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "373"
-                  endingLineNumber = "373"
-                  offsetFromSymbolStart = "2568">
-               </Location>
-               <Location
-                  uuid = "6F29C3FD-1737-4C29-8E14-D109E954543E - 81474953fd81faeb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "373"
-                  endingLineNumber = "373"
-                  offsetFromSymbolStart = "3252">
-               </Location>
-               <Location
-                  uuid = "6F29C3FD-1737-4C29-8E14-D109E954543E - 81474953fd81faeb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "373"
-                  endingLineNumber = "373"
-                  offsetFromSymbolStart = "3124">
-               </Location>
-               <Location
-                  uuid = "6F29C3FD-1737-4C29-8E14-D109E954543E - 887543050fdc8f90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, updatedStatus: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "373"
-                  endingLineNumber = "373"
-                  offsetFromSymbolStart = "3168">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0512E28D-0736-4BED-9718-950BAB47A510"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/FireBaseManager/FireStoreManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "updateAppointmentOfPatient(email:documentid:userData:patientId:pFirstname:pLastname:pMiddlename:doctorName:doctorEmail:hospitalName:medicalEmergency:date:time:medicalHistory:status:updatedStatus:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0512E28D-0736-4BED-9718-950BAB47A510 - 81474953fd81faad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
-                  offsetFromSymbolStart = "2124">
-               </Location>
-               <Location
-                  uuid = "0512E28D-0736-4BED-9718-950BAB47A510 - 81474953fd81faad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
-                  offsetFromSymbolStart = "2808">
-               </Location>
-               <Location
-                  uuid = "0512E28D-0736-4BED-9718-950BAB47A510 - 81474953fd81faad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
-                  offsetFromSymbolStart = "2680">
-               </Location>
-               <Location
-                  uuid = "0512E28D-0736-4BED-9718-950BAB47A510 - 887543050fdc8fd6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Online_Diagnosis.FireStoreManager.updateAppointmentOfPatient(email: Swift.String, documentid: Swift.String, userData: Swift.Dictionary&lt;Swift.String, Any&gt;, patientId: Swift.Optional&lt;Swift.String&gt;, pFirstname: Swift.Optional&lt;Swift.String&gt;, pLastname: Swift.Optional&lt;Swift.String&gt;, pMiddlename: Swift.Optional&lt;Swift.String&gt;, doctorName: Swift.Optional&lt;Swift.String&gt;, doctorEmail: Swift.Optional&lt;Swift.String&gt;, hospitalName: Swift.Optional&lt;Swift.String&gt;, medicalEmergency: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Swift.String&gt;, time: Swift.Optional&lt;Swift.String&gt;, medicalHistory: Swift.Optional&lt;Swift.Bool&gt;, status: Swift.Optional&lt;Swift.String&gt;, updatedStatus: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Online Diagnosis"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepika/Documents/Projects/Online%20Diagnosis/Online%20Diagnosis/FireBaseManager/FireStoreManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
-                  offsetFromSymbolStart = "2724">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F31BADD-E42A-4C4F-A39B-D26B5800AFBC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Online Diagnosis/ViewController/Dashboard/DoctorHome.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "numberOfSections(in:)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

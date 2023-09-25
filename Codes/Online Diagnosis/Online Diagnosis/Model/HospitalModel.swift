@@ -39,6 +39,10 @@ class AppointmentModel {
     let time: String?
     let medicalHistory: Bool?
     let status: String?
+    let patientEmail: String?
+    let bookingDate: Double?
+    let documentId: String?
+
 
     init(patientId: String?,
          pFirstname: String?,
@@ -51,7 +55,7 @@ class AppointmentModel {
          date: String?,
          time: String?,
          medicalHistory: Bool?,
-         status: String?) {
+         status: String?, patientEmail: String?, bookingDate: Double, documentId: String?) {
         self.patientId = patientId
         self.pFirstname = pFirstname
         self.pLastname = pLastname
@@ -64,6 +68,9 @@ class AppointmentModel {
         self.medicalHistory = medicalHistory
         self.status = status
         self.doctorEmail = doctorEmail
+        self.patientEmail = patientEmail
+        self.bookingDate = bookingDate
+        self.documentId = documentId
     }
 }
 
@@ -98,6 +105,10 @@ struct AppointmentDetail: Codable {
     let time: String?
     let medicalHistory: Bool?
     let status: String?
+    let doctorEmail: String?
+    let bookingDate: Double?
+    let documentId: String?
+    let patientEmail: String?
 }
 
 struct ApproveAppointmentDetail: Codable {
@@ -112,4 +123,24 @@ struct ApproveAppointmentDetail: Codable {
     let time: String?
     let medicalHistory: Bool?
     let status: String?
+    let doctorEmail: String?
+    let bookingDate: Double?
+    let documentId: String?
+    let patientEmail: String?
+}
+
+struct MedicalDetail: Codable{
+    var firstname: String?
+    var middlename: String?
+    var lastname: String?
+    var email: String?
+    var dob: String?
+    var gender: String?
+    var phoneNo: String?
+    var address: String?
+    var weight: String?
+    var height: String?
+    var medication: String?
+    var medicalProblem: String?
+    var patientId: String?
 }

@@ -9,6 +9,7 @@ class BookVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate, UIT
     @IBOutlet weak var mapView: MKMapView!
     private let locationManager = CLLocationManager()
     var hospitalData : [[String:String]] = []
+    var globeToggle = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,17 @@ class BookVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate, UIT
         self.getHospitalList()
 
     }
+    
+    @IBAction func globeTapped(_ sender: UIButton) {
+           if globeToggle {
+               mapView.mapType = .standard
+           } else {
+               mapView.mapType = .satellite
+           }
+           
+           // Toggle the state
+        globeToggle.toggle()
+       }
     
     // MARK: - MKMapViewDelegate
 

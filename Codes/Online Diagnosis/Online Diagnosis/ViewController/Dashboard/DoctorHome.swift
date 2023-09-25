@@ -11,15 +11,10 @@ class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var appointmentData : [AppointmentDetail] = []
     var upcomingData : [AppointmentDetail] = []
-//    var newData : [AppointmentDetail] = []
+    var newData : [ApproveAppointmentDetail] = []
 
     var sectionData = ["Upcoming Appointment", "New Appointments"]
     
-    var newData: [ApproveAppointmentDetail] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +23,13 @@ class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.dataSource = self
         username.text = UserDefaultsManager.shared.getName()
 
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.getAppointmentList()
         self.getApproveAppointmentList()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onAppointmentHistory(_ sender: Any) {
@@ -39,51 +38,76 @@ class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
     func getAppointmentList(){
-        let email = UserDefaultsManager.shared.getEmail()
         self.upcomingData.removeAll()
-        FireStoreManager.shared.getProfile(email: email) { querySnapshot in
-            
-            var itemsArray = [self.upcomingData]
+        FireStoreManager.shared.getAppointments { querySnapshot in
             print(querySnapshot.documents)
-            for (_,document) in querySnapshot.documents.enumerated() {
-                do {
-                    let item = try document.data(as: UserDataModel.self)
-                    itemsArray.append(item.AppointmentDetail ?? [])
-                    
-                    print(itemsArray)
-                 
-                }catch let error {
-                    print(error)
-                }
+            for document in querySnapshot.documents {
+                // Convert Firestore data to your custom model
+                 let data = document.data()
+                    if let patientId = data["patientId"] as? String,
+                       let pFirstname = data["pFirstname"] as? String,
+                       let pLastname = data["pLastname"] as? String,
+                       let pMiddlename = data["pMiddlename"] as? String,
+                       let hospitalName = data["hospitalName"] as? String,
+                       let medicalEmergency = data["medicalEmergency"] as? String,
+                       let date = data["date"] as? String,
+                       let time = data["time"] as? String,
+                       let medicalHistory = data["medicalHistory"] as? Bool,
+                       let status = data["status"] as? String,
+                       let doctorEmail = data["doctorEmail"] as? String,
+                       let bookingDate = data["bookingDate"] as? Double,
+                       let doctorName = data["doctorName"] as? String,
+                       let documentId = data["documentId"] as? String,
+                       let patientEmail = data["patientEmail"] as? String{
+                        
+                        // Create an instance of your custom model
+                        let appointmentDetail = AppointmentDetail(patientId: patientId, pFirstname: pFirstname, pLastname: pLastname, pMiddlename: pMiddlename, doctorName: doctorName, hospitalName: hospitalName, medicalEmergency: medicalEmergency, date: date, time: time, medicalHistory: medicalHistory, status: status, doctorEmail: doctorEmail, bookingDate: bookingDate, documentId: document.documentID, patientEmail: patientEmail)
+                        
+                        // Add the custom model object to the array
+                        self.upcomingData.append(appointmentDetail)
+                    }
             }
-            self.upcomingData = itemsArray[1]
-            self.tableView.reloadData()
 
+            print(self.upcomingData)
+            self.tableView.reloadData()
         }
     }
     
     func getApproveAppointmentList(){
-        let email = UserDefaultsManager.shared.getEmail()
         self.newData.removeAll()
-        FireStoreManager.shared.getProfile(email: email) { querySnapshot in
-            
-            var itemsArray = [self.newData]
+        FireStoreManager.shared.getApproveAppointments { querySnapshot in
             print(querySnapshot.documents)
-            for (_,document) in querySnapshot.documents.enumerated() {
-                do {
-                    let item = try document.data(as: UserDataModel.self)
-                    itemsArray.append(item.ApproveAppointmentDetail ?? [])
-                    
-                    print(itemsArray)
-                 
-                }catch let error {
-                    print(error)
-                }
+            for document in querySnapshot.documents {
+                // Convert Firestore data to your custom model
+                 let data = document.data()
+                    if let patientId = data["patientId"] as? String,
+                       let pFirstname = data["pFirstname"] as? String,
+                       let pLastname = data["pLastname"] as? String,
+                       let pMiddlename = data["pMiddlename"] as? String,
+                       let hospitalName = data["hospitalName"] as? String,
+                       let medicalEmergency = data["medicalEmergency"] as? String,
+                       let date = data["date"] as? String,
+                       let time = data["time"] as? String,
+                       let medicalHistory = data["medicalHistory"] as? Bool,
+                       let status = data["status"] as? String,
+                       let doctorEmail = data["doctorEmail"] as? String,
+                       let bookingDate = data["bookingDate"] as? Double,
+                       let doctorName = data["doctorName"] as? String,
+                       let documentId = data["documentId"] as? String,
+                       let patientEmail = data["patientEmail"] as? String {
+                        
+                        // Create an instance of your custom model, patientEmail: <#String?#>
+                        let appointmentDetail = ApproveAppointmentDetail(patientId: patientId, pFirstname: pFirstname, pLastname: pLastname, pMiddlename: pMiddlename, doctorName: doctorName, hospitalName: hospitalName, medicalEmergency: medicalEmergency, date: date, time: time, medicalHistory: medicalHistory, status: status, doctorEmail: doctorEmail, bookingDate: bookingDate, documentId: document.documentID, patientEmail: patientEmail)
+                        
+                        // Add the custom model object to the array
+                        self.newData.append(appointmentDetail)
+                    }
             }
-            self.newData = itemsArray[1]
-            self.tableView.reloadData()
 
+            print(self.newData)
+            self.tableView.reloadData()
         }
     }
 }
@@ -135,6 +159,8 @@ extension DoctorHome {
                 cell.doctorName.text = keyValuePair.doctorName
                 cell.date.text = keyValuePair.date
                 cell.time.text = keyValuePair.time
+                cell.viewBtn.tag = indexPath.row
+                cell.viewBtn.addTarget(self, action: #selector(self.viewMedicalReport(_:)), for: .touchUpInside)
             }
         }
         return cell
@@ -173,6 +199,7 @@ extension DoctorHome {
             let data = self.upcomingData[indexPath.row]
             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
             vc.appointmentList = data
+            vc.doctorViewAppointment = true
             vc.viewAppointment = true
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
@@ -180,10 +207,22 @@ extension DoctorHome {
             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
             vc.approveAppointmentData = data
             vc.viewApproveAppointment = true
-            vc.viewAppointment = true
+            vc.doctorViewAppointment = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
 
+    }
+    
+    @objc func viewMedicalReport(_ sender: UIButton) {
+        let dataValue = self.newData[sender.tag]
+        if dataValue.medicalHistory == false{
+            showAlerOnTop(message: "Medical history is not allowed to show")
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier:  "MedicalHistory" ) as! MedicalHistory
+            vc.patientId = dataValue.patientId ?? ""
+            vc.doctorViewMedical = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @objc func appointmentStatus(_ sender: UIButton) {
@@ -199,30 +238,26 @@ extension DoctorHome {
     }
     
     func updateAppointment(status: String, patientName: String, doctorName: String, documentId: String, tag: Int){
-        let userdata = ["patientId": self.upcomingData[tag].patientId ?? "", "pFirstname": self.upcomingData[tag].pFirstname ?? "", "pLastname": self.upcomingData[tag].pLastname ?? "", "pMiddlename": self.upcomingData[tag].pMiddlename ?? "", "doctorName": self.upcomingData[tag].doctorName ?? "", "doctorEmail": UserDefaultsManager.shared.getEmail(), "hospitalName": self.upcomingData[tag].hospitalName ?? "", "medicalEmergency": self.upcomingData[tag].medicalEmergency ?? "", "date": self.upcomingData[tag].date ?? "", "time": self.upcomingData[tag].time ?? "", "medicalHistory": true, "status": self.upcomingData[tag].status ?? ""] as [String : Any]
         
-        //        FireStoreManager.shared.updateAppointmentArrayValuesByKeys(documentID: documentId, arrayField: "AppointmentDetail", indexToUpdate: tag, newValue: ["patientId": self.upcomingData[tag].patientId ?? "", "pFirstname": self.upcomingData[tag].pFirstname ?? "", "pLastname": self.upcomingData[tag].pLastname ?? "", "pMiddlename": self.upcomingData[tag].pMiddlename ?? "", "doctorName": self.upcomingData[tag].doctorName ?? "", "doctorEmail": UserDefaultsManager.shared.getEmail(), "hospitalName": self.upcomingData[tag].hospitalName ?? "", "medicalEmergency": self.upcomingData[tag].medicalEmergency ?? "", "date": self.upcomingData[tag].date ?? "", "time": self.upcomingData[tag].time ?? "", "medicalHistory": true, "status": status] as [String : Any], completion: { success in
-        //                            if success{
-        //                                showAlerOnTop(message: "Appointment \(status) successfully")
-        //                                self.getAppointmentList()
-        //                                self.navigationController?.popViewController(animated: true)
-        //                            }
-        //                        })
-        
-        FireStoreManager.shared.updateAppointmentOfPatient(email: UserDefaultsManager.shared.getEmail(), documentid: documentId, userData: userdata, patientId: self.upcomingData[tag].patientId ?? "", pFirstname: self.upcomingData[tag].pFirstname ?? "", pLastname: self.upcomingData[tag].pLastname ?? "", pMiddlename: self.upcomingData[tag].pMiddlename ?? "", doctorName: self.upcomingData[tag].doctorName ?? "", doctorEmail: UserDefaultsManager.shared.getEmail(), hospitalName: self.upcomingData[tag].hospitalName ?? "", medicalEmergency: self.upcomingData[tag].medicalEmergency ?? "", date: self.upcomingData[tag].date ?? "", time: self.upcomingData[tag].time ?? "", medicalHistory: true, status: self.upcomingData[tag].status ?? "", updatedStatus: status) { success in
+        let data = AppointmentModel.init(patientId: self.upcomingData[tag].patientId ?? "", pFirstname: self.upcomingData[tag].pFirstname ?? "", pLastname: self.upcomingData[tag].pLastname ?? "", pMiddlename: self.upcomingData[tag].pMiddlename ?? "", doctorName: self.upcomingData[tag].doctorName ?? "", doctorEmail: UserDefaultsManager.shared.getEmail(), hospitalName: self.upcomingData[tag].hospitalName ?? "", medicalEmergency: self.upcomingData[tag].medicalEmergency ?? "", date: self.upcomingData[tag].date ?? "", time: self.upcomingData[tag].time ?? "", medicalHistory: self.upcomingData[tag].medicalHistory ?? true, status: self.upcomingData[tag].status ?? "", patientEmail: self.upcomingData[tag].patientEmail ?? "", bookingDate: self.upcomingData[tag].bookingDate ?? 0.0, documentId: self.upcomingData[tag].documentId ?? "")
+
+        FireStoreManager.shared.updateAppointmentOfPatient(email: UserDefaultsManager.shared.getEmail(), documentid: documentId, data: data, updatedStatus: status, documentId: self.upcomingData[tag].documentId ?? "") { success in
             if success {
-                showOkAlertAnyWhereWithCallBack(message: "Appointment \(status) successfully") {
-                    
-                    self.getAppointmentList()
-                    self.getApproveAppointmentList()
-                    
-                    self.tableView.reloadData()
-                    DispatchQueue.main.async {
-                        self.navigationController?.popToRootViewController(animated: true)
-                    }
-                    
-                }
+            
+                self.approvePatientAppointment(patientData: data, status: status)
+                
             }
+        }
+    }
+    
+    func approvePatientAppointment(patientData: AppointmentModel, status: String){
+        FireStoreManager.shared.approvePatientAppointment(status: status, patientID: patientData.patientId ?? "", bookingDate: patientData.bookingDate ?? 0.0, email: patientData.patientEmail ?? "", data: patientData) { success in
+            showOkAlertAnyWhereWithCallBack(message: "Appointment \(status) successfully") {
+                
+                self.getAppointmentList()
+                self.getApproveAppointmentList()
+            }
+            
         }
     }
 }

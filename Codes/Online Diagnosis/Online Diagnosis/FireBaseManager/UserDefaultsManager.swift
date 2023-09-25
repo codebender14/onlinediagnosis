@@ -41,6 +41,14 @@ class UserDefaultsManager  {
        return UserDefaults.standard.string(forKey: "firstName") ?? ""
     }
     
+    func getMiddleName()-> String {
+       return UserDefaults.standard.string(forKey: "middleName") ?? ""
+    }
+    
+    func getLastName()-> String {
+       return UserDefaults.standard.string(forKey: "lastName") ?? ""
+    }
+    
     func getUserType()-> String {
        return UserDefaults.standard.string(forKey: "userType") ?? ""
     }
@@ -49,9 +57,11 @@ class UserDefaultsManager  {
        return UserDefaults.standard.string(forKey: "documentId") ?? ""
     }
     
-    func saveData(name:String,email:String, userType: String) {
+    func saveData(name:String, middleName: String, lastname: String, email:String, userType: String) {
         
         UserDefaults.standard.setValue(name, forKey: "firstName")
+        UserDefaults.standard.setValue(middleName, forKey: "middleName")
+        UserDefaults.standard.setValue(lastname, forKey: "lastName")
         UserDefaults.standard.setValue(email, forKey: "email")
         UserDefaults.standard.setValue(userType, forKey: "userType")
     }
@@ -59,6 +69,8 @@ class UserDefaultsManager  {
     func clearData(){
         UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "firstName")
+        UserDefaults.standard.removeObject(forKey: "middleName")
+        UserDefaults.standard.removeObject(forKey: "lastName")
         UserDefaults.standard.removeObject(forKey: "userType")
         UserDefaults.standard.removeObject(forKey: "documentId")
     }

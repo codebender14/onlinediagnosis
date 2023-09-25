@@ -52,5 +52,9 @@ class InitialVC: UIViewController {
                 
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+ 
 
 }
+

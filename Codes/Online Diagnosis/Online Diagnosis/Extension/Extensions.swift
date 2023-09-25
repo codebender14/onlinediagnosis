@@ -10,6 +10,11 @@ extension String {
         return emailPredicate.evaluate(with: self)
     }
     
+    func isValidPhoneNumber(_ phoneNumber: String) -> Bool {
+        let phoneRegex = #"^\d{10}$"#
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+        return phoneTest.evaluate(with: phoneNumber)
+    }
 }
 
 

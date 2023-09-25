@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -17,6 +18,11 @@ class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let userType = UserDefaultsManager.shared.getUserType()
         if userType == UserType.doctor.rawValue{
@@ -24,52 +30,85 @@ class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             self.getAppointmentList()
         }
+        
     }
     
-
-    func getAppointmentList(){
-        let email = UserDefaultsManager.shared.getEmail()
-        FireStoreManager.shared.getProfile(email: email) { querySnapshot in
+    func getAppointmentList() {
+        self.appointmentData.removeAll()
+        FireStoreManager.shared.getAppointments { querySnapshot in
             
-            var itemsArray = [self.appointmentData]
-            print(querySnapshot.documents)
-            for (_,document) in querySnapshot.documents.enumerated() {
-                do {
-                    let item = try document.data(as: UserDataModel.self)
-                    itemsArray.append(item.AppointmentDetail ?? [])
-                    
-                    print(itemsArray)
-                 
-                }catch let error {
-                    print(error)
-                }
-            }
-            self.appointmentData = itemsArray[1]
-            self.tableView.reloadData()
 
+            print(querySnapshot.documents)
+            for document in querySnapshot.documents {
+                // Convert Firestore data to your custom model
+                 let data = document.data()
+                    if let patientId = data["patientId"] as? String,
+                       let pFirstname = data["pFirstname"] as? String,
+                       let pLastname = data["pLastname"] as? String,
+                       let pMiddlename = data["pMiddlename"] as? String,
+                       let hospitalName = data["hospitalName"] as? String,
+                       let medicalEmergency = data["medicalEmergency"] as? String,
+                       let date = data["date"] as? String,
+                       let time = data["time"] as? String,
+                       let medicalHistory = data["medicalHistory"] as? Bool,
+                       let status = data["status"] as? String,
+                       let doctorEmail = data["doctorEmail"] as? String,
+                       let bookingDate = data["bookingDate"] as? Double,
+                       let doctorName = data["doctorName"] as? String,
+                       let documentId = data["documentId"] as? String,
+                       let patientEmail = data["patientEmail"] as? String{
+                        
+                        // Create an instance of your custom model
+                        let appointmentDetail = AppointmentDetail(patientId: patientId, pFirstname: pFirstname, pLastname: pLastname, pMiddlename: pMiddlename, doctorName: doctorName, hospitalName: hospitalName, medicalEmergency: medicalEmergency, date: date, time: time, medicalHistory: medicalHistory, status: status, doctorEmail: doctorEmail, bookingDate: bookingDate, documentId: document.documentID, patientEmail: patientEmail)
+                        
+                        // Add the custom model object to the array
+                        self.appointmentData.append(appointmentDetail)
+                    }
+                
+            }
+
+            print(self.appointmentData)
+            self.tableView.reloadData()
         }
     }
     
     func getApproveAppointmentList(){
-        let email = UserDefaultsManager.shared.getEmail()
-        FireStoreManager.shared.getProfile(email: email) { querySnapshot in
-            
-            var itemsArray = [self.approveAppointmentData]
-            print(querySnapshot.documents)
-            for (_,document) in querySnapshot.documents.enumerated() {
-                do {
-                    let item = try document.data(as: UserDataModel.self)
-                    itemsArray.append(item.ApproveAppointmentDetail ?? [])
-                    
-                    print(itemsArray)
-                 
-                }catch let error {
-                    print(error)
-                }
-            }
-            self.approveAppointmentData = itemsArray[1]
-            self.tableView.reloadData()
+        self.approveAppointmentData.removeAll()
 
+        FireStoreManager.shared.getApproveAppointments { querySnapshot in
+            
+
+            print(querySnapshot.documents)
+            for document in querySnapshot.documents {
+                // Convert Firestore data to your custom model
+                 let data = document.data()
+                    if let patientId = data["patientId"] as? String,
+                       let pFirstname = data["pFirstname"] as? String,
+                       let pLastname = data["pLastname"] as? String,
+                       let pMiddlename = data["pMiddlename"] as? String,
+                       let hospitalName = data["hospitalName"] as? String,
+                       let medicalEmergency = data["medicalEmergency"] as? String,
+                       let date = data["date"] as? String,
+                       let time = data["time"] as? String,
+                       let medicalHistory = data["medicalHistory"] as? Bool,
+                       let status = data["status"] as? String,
+                       let doctorEmail = data["doctorEmail"] as? String,
+                       let bookingDate = data["bookingDate"] as? Double,
+                       let doctorName = data["doctorName"] as? String,
+                       let documentId = data["documentId"] as? String,
+                       let patientEmail = data["patientEmail"] as? String {
+                        
+                        // Create an instance of your custom model
+                        let appointmentDetail = ApproveAppointmentDetail(patientId: patientId, pFirstname: pFirstname, pLastname: pLastname, pMiddlename: pMiddlename, doctorName: doctorName, hospitalName: hospitalName, medicalEmergency: medicalEmergency, date: date, time: time, medicalHistory: medicalHistory, status: status, doctorEmail: doctorEmail, bookingDate: bookingDate, documentId: document.documentID, patientEmail: patientEmail)
+                        
+                        // Add the custom model object to the array
+                        self.approveAppointmentData.append(appointmentDetail)
+                    }
+                
+            }
+
+            print(self.approveAppointmentData)
+            self.tableView.reloadData()
         }
     }
 

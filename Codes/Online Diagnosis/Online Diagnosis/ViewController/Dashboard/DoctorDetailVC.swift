@@ -22,6 +22,7 @@ class DoctorDetailVC: UIViewController {
     var hospitalName = ""
     
     var availableHours = [String]()
+    var timeStamp = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +65,9 @@ class DoctorDetailVC: UIViewController {
         }
         else {
             let documentId = UserDefaultsManager.shared.getDocumentId()
-            let data = AppointmentModel(patientId: documentId, pFirstname: "", pLastname: "", pMiddlename: "", doctorName: self.name.text ?? "", doctorEmail: doctordetail.email ?? "", hospitalName: self.hospitalName, medicalEmergency: "", date: self.date.text ?? "", time: self.time.text ?? "", medicalHistory: false, status: "Pending")
+            let data = AppointmentModel(patientId: documentId, pFirstname: "", pLastname: "", pMiddlename: "", doctorName: self.name.text ?? "", doctorEmail: doctordetail.email ?? "", hospitalName: self.hospitalName, medicalEmergency: "", date: self.date.text ?? "", time: self.time.text ?? "", medicalHistory: false, status: "Pending", patientEmail: UserDefaultsManager.shared.getEmail(), bookingDate: self.timeStamp, documentId: "")
             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
-            vc.appointmentData = data
+            vc.doctorDetailData = data
             vc.viewAppointment = false
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -133,14 +134,19 @@ extension DoctorDetailVC{
         @objc func doneHolydatePicker() {
             //For date formate
             let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd-yyyy"
+            formatter.dateFormat = "dd-MM-yyyy"
             date.text = formatter.string(from: datePicker.date)
+            timeStamp = getTime(date: datePicker.date)
             //dismiss date picker dialog
             self.view.endEditing(true)
         }
         
         @objc func cancelDatePicker() {
             self.view.endEditing(true)
+        }
+    
+    func getTime(date:Date)-> Double {
+            return Double(date.millisecondsSince1970)
         }
     
     func showOpeningTimePicker() {
@@ -173,7 +179,7 @@ extension DoctorDetailVC{
     @objc func doneOpingTimePicker() {
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh mm a"
+        formatter.dateFormat = "h:mm a"
         time.text = formatter.string(from: timePicker.date)
        // txtOpeingTime.textFieldDidChange(txtOpeingTime)
         //dismiss date picker dialog

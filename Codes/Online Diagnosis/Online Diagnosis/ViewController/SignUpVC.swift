@@ -118,6 +118,29 @@ class SignUpVC: UIViewController {
     @IBAction func showDatepicker(_ sender: UIButton) {
         self.showDatePicker()
     }
+    
+    
+    
+    @IBAction func onShowHidePassword(_ sender: UIButton) {
+        
+        if(sender.tag == 1) {
+            let buttonImageName = password.isSecureTextEntry ? "eye" : "eye.slash"
+                if let buttonImage = UIImage(systemName: buttonImageName) {
+                    sender.setImage(buttonImage, for: .normal)
+            }
+            self.password.isSecureTextEntry.toggle()
+        }
+       
+        if(sender.tag == 2) {
+            let buttonImageName = confirmPassword.isSecureTextEntry ? "eye" : "eye.slash"
+                if let buttonImage = UIImage(systemName: buttonImageName) {
+                    sender.setImage(buttonImage, for: .normal)
+            }
+            self.confirmPassword.isSecureTextEntry.toggle()
+        }
+       
+    }
+    
 }
 
 extension SignUpVC{

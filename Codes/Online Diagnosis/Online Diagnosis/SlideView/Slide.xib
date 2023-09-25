@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Use this technique to make your slides, create your app, in a simple and effective way " translatesAutoresizingMaskIntoConstraints="NO" id="M3Z-3U-9Q6" userLabel="Description">
-                    <rect key="frame" x="37.5" y="372.5" width="300" height="194.5"/>
+                    <rect key="frame" x="37.5" y="392.5" width="300" height="174.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -53,7 +53,7 @@
                 <constraint firstItem="uoL-v0-72j" firstAttribute="top" secondItem="M3Z-3U-9Q6" secondAttribute="bottom" constant="20" id="bMs-VT-Wnf"/>
                 <constraint firstItem="M3Z-3U-9Q6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="e0l-I7-ikx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uoL-v0-72j" secondAttribute="bottom" constant="30" id="i4H-eD-Ja7"/>
-                <constraint firstItem="M3Z-3U-9Q6" firstAttribute="top" secondItem="QDx-f0-rb9" secondAttribute="bottom" multiplier="1.2" id="ilC-OI-aQW"/>
+                <constraint firstItem="M3Z-3U-9Q6" firstAttribute="top" secondItem="QDx-f0-rb9" secondAttribute="bottom" multiplier="1.2" constant="20" id="ilC-OI-aQW"/>
                 <constraint firstItem="QDx-f0-rb9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="55" id="ilx-pQ-Kez"/>
                 <constraint firstItem="QDx-f0-rb9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="xEf-gc-FZt"/>
             </constraints>
