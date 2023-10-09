@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var username: UILabel!
@@ -23,13 +24,14 @@ class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.dataSource = self
         username.text = UserDefaultsManager.shared.getName()
 
+        self.getAppointmentList()
+        self.getApproveAppointmentList()
+
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getAppointmentList()
-        self.getApproveAppointmentList()
     }
     
     @IBAction func onAppointmentHistory(_ sender: Any) {
@@ -143,7 +145,7 @@ extension DoctorHome {
         if indexPath.section == 0 {
             let keyValuePair = upcomingData[indexPath.row]
             cell.titleLbl.text = keyValuePair.pFirstname
-            cell.doctorName.text = keyValuePair.doctorName
+            cell.doctorName.text = keyValuePair.medicalEmergency
             cell.date.text = keyValuePair.date
             cell.time.text = keyValuePair.time
             cell.acceptBtn.tag = indexPath.row
@@ -156,11 +158,24 @@ extension DoctorHome {
             if newData.count > 0{
                 let keyValuePair = newData[indexPath.row]
                 cell.titleLbl.text = keyValuePair.pFirstname
-                cell.doctorName.text = keyValuePair.doctorName
+                cell.doctorName.text = keyValuePair.medicalEmergency
                 cell.date.text = keyValuePair.date
                 cell.time.text = keyValuePair.time
+                
                 cell.viewBtn.tag = indexPath.row
                 cell.viewBtn.addTarget(self, action: #selector(self.viewMedicalReport(_:)), for: .touchUpInside)
+
+                if keyValuePair.status != "cancelled".lowercased(){
+                    cell.medicalLbl.isHidden = true
+                    cell.patientLbl.isHidden = false
+                    cell.viewBtn.isHidden = false
+
+                } else {
+                    cell.medicalLbl.isHidden = false
+                    cell.patientLbl.isHidden = true
+                    cell.viewBtn.isHidden = true
+
+                }
             }
         }
         return cell
@@ -252,6 +267,7 @@ extension DoctorHome {
     
     func approvePatientAppointment(patientData: AppointmentModel, status: String){
         FireStoreManager.shared.approvePatientAppointment(status: status, patientID: patientData.patientId ?? "", bookingDate: patientData.bookingDate ?? 0.0, email: patientData.patientEmail ?? "", data: patientData) { success in
+            self.addNotification(date: patientData.date ?? "", time: patientData.time ?? "", patientName: patientData.pFirstname ?? "")
             showOkAlertAnyWhereWithCallBack(message: "Appointment \(status) successfully") {
                 
                 self.getAppointmentList()
@@ -259,6 +275,72 @@ extension DoctorHome {
             }
             
         }
+    }
+    
+    func addNotification(date: String, time: String, patientName: String){
+        // Create a notification content
+        let content = UNMutableNotificationContent()
+        content.title = "Appointment"
+        content.body = "You have appointment with \(patientName) within 5 minute"
+        content.sound = UNNotificationSound.default
+        
+        // Set the date and time when you want the notification to be delivered
+        // Example usage:
+        if let dateComponents = convertDateAndTimeToComponents(dateString: date, timeString: time) {
+            print(dateComponents)
+            // Create a calendar trigger with the specified date and time
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            // Create a notification request with a unique identifier
+            let identifier = "YourNotificationIdentifier"
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            // Add the notification request to the notification center
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error.localizedDescription)")
+                } else {
+                    print("Notification scheduled successfully")
+                }
+            }
+        } else {
+            print("Invalid date or time format")
+        }
+        
+    }
+    
+    func convertDateAndTimeToComponents(dateString: String, timeString: String) -> DateComponents? {
+        // Create a DateFormatter for the date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        // Create a DateFormatter for the time
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "h:mm a"
+        timeFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        // Parse the date and time strings
+        guard let date = dateFormatter.date(from: dateString), let time = timeFormatter.date(from: timeString) else {
+            return nil // Invalid date or time format
+        }
+
+        // Create a Calendar instance
+        let calendar = Calendar.current
+
+        // Extract date components from the date and time
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        let timeComponents = calendar.dateComponents([.hour, .minute], from: time)
+
+        // Combine date and time components
+        var finalDateComponents = DateComponents()
+        finalDateComponents.year = dateComponents.year
+        finalDateComponents.month = dateComponents.month
+        finalDateComponents.day = dateComponents.day
+        finalDateComponents.hour = timeComponents.hour
+        finalDateComponents.minute = timeComponents.minute
+
+        return finalDateComponents
     }
 }
 

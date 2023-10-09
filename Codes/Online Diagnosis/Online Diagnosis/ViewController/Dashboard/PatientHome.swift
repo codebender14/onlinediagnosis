@@ -10,14 +10,29 @@ class PatientHome: UIViewController {
     @IBOutlet weak var username: UILabel!
     var appointmentData : [AppointmentDetail] = []
 
+    @IBOutlet weak var prescriptionView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(prescriptionViewTapped))
+        prescriptionView.addGestureRecognizer(tapGesture)
+        prescriptionView.isUserInteractionEnabled = true
         
         username.text = UserDefaultsManager.shared.getName()
 
         self.getProfileData()
         // Do any additional setup after loading the view.
     }
+    
+    
+      @objc func prescriptionViewTapped() {
+          
+          let vc = self.storyboard?.instantiateViewController(withIdentifier:  "PrescriptionList" ) as! PrescriptionList
+          self.navigationController?.pushViewController(vc, animated: true)
+    
+      }
+    
     
     func getProfileData(){
         FireStoreManager.shared.getProfile(email: UserDefaultsManager.shared.getEmail()) { querySnapshot in

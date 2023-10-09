@@ -26,7 +26,7 @@ class DoctorDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        datePicker.minimumDate = Date()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -131,15 +131,18 @@ extension DoctorDetailVC{
             
         }
         
-        @objc func doneHolydatePicker() {
-            //For date formate
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd-MM-yyyy"
-            date.text = formatter.string(from: datePicker.date)
-            timeStamp = getTime(date: datePicker.date)
-            //dismiss date picker dialog
-            self.view.endEditing(true)
-        }
+    
+    @objc func doneHolydatePicker() {
+        //For date formate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        date.text = formatter.string(from: datePicker.date)
+        self.convertTimeForDate(selectedDate: datePicker.date)
+        timeStamp = getTime(date: datePicker.date)
+        self.time.text = ""
+        //dismiss date picker dialog
+        self.view.endEditing(true)
+    }
         
         @objc func cancelDatePicker() {
             self.view.endEditing(true)
@@ -186,4 +189,80 @@ extension DoctorDetailVC{
         self.view.endEditing(true)
     }
 
+}
+
+
+extension DoctorDetailVC {
+    func getDayOfWeek(for date: Date) -> String {
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: date)
+        
+        switch weekday {
+            case 1:
+                return "Sunday"
+            case 2:
+                return "Monday"
+            case 3:
+                return "Tuesday"
+            case 4:
+                return "Wednesday"
+            case 5:
+                return "Thursday"
+            case 6:
+                return "Friday"
+            case 7:
+                return "Saturday"
+            default:
+                return "Unknown"
+            }
+    }
+
+    func convertTimeForDate(selectedDate: Date){
+        // Usage
+        let dayOfWeek = getDayOfWeek(for: selectedDate)
+        print("The selected date falls on a \(dayOfWeek).")
+        
+        if let indexValue = doctordetail.availableHours?.firstIndex(where: { $0.contains(dayOfWeek) }) {
+            let availableTime = doctordetail.availableHours?[indexValue] ?? ""
+            let components = availableTime.components(separatedBy: " ")
+
+            if components.count >= 3 {
+                let separatedString = components[1...].joined(separator: " ")
+                if let timeSlot = self.convertTimeFormat(separatedString) {
+                    print(timeSlot)
+                }
+            }
+        }
+        else {
+            showOkAlertAnyWhereWithCallBack(message: "Doctor is not available on this date") {
+                self.date.text = ""
+            }
+        }
+        
+    }
+    
+    func convertTimeFormat(_ timeString: String) -> String? {
+        let components = timeString.components(separatedBy: " - ")
+        
+        if components.count == 2 {
+            let startTime = components[0]
+            let endTime = components[1]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h a"
+            
+            if let startDate = dateFormatter.date(from: startTime), let endDate = dateFormatter.date(from: endTime) {
+                dateFormatter.dateFormat = "HHmm"
+                
+                timePicker.minimumDate = startDate
+                timePicker.maximumDate = endDate
+                
+                let formattedStartTime = dateFormatter.string(from: startDate)
+                let formattedEndTime = dateFormatter.string(from: endDate)
+                return "\(formattedStartTime) - \(formattedEndTime)"
+            }
+        }
+        
+        return nil
+    }
 }

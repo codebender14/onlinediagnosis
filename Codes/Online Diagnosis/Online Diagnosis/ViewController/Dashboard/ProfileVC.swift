@@ -21,7 +21,7 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        datePicker.maximumDate = Date()
         self.firstname.isUserInteractionEnabled = false
         self.middlename.isUserInteractionEnabled = false
         self.lastname.isUserInteractionEnabled = false
@@ -134,8 +134,23 @@ class ProfileVC: UIViewController {
     }
 
     @IBAction func onSignOut(_ sender: Any) {
-        UserDefaultsManager.shared.clearData()
-        SceneDelegate.shared!.loginCheckOrRestart()
+        // Create an alert controller
+                let alertController = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+                
+                // Add a "Logout" action to the alert
+                let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (_) in
+                    UserDefaultsManager.shared.clearData()
+                    SceneDelegate.shared!.loginCheckOrRestart()
+                }
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                // Add the actions to the alert controller
+                alertController.addAction(logoutAction)
+                alertController.addAction(cancelAction)
+                
+                // Present the alert
+                present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func onMaleFemaleClick(_ sender: UIButton){
@@ -158,10 +173,10 @@ class ProfileVC: UIViewController {
              showAlerOnTop(message: "Please enter first name.")
             return false
         }
-        if(self.middlename.text!.isEmpty) {
-             showAlerOnTop(message: "Please enter middle name.")
-            return false
-        }
+//        if(self.middlename.text!.isEmpty) {
+//             showAlerOnTop(message: "Please enter middle name.")
+//            return false
+//        }
         if(self.lastname.text!.isEmpty) {
             showAlerOnTop(message: "Please enter last name.")
            return false
@@ -224,7 +239,7 @@ extension ProfileVC {
         @objc func doneHolydatePicker() {
             //For date formate
             let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd-yyyy"
+            formatter.dateFormat = "MM/dd/yyyy" 
             dob.text = formatter.string(from: datePicker.date)
             //dismiss date picker dialog
             self.view.endEditing(true)

@@ -3,11 +3,10 @@
 import UIKit
 import IQKeyboardManagerSwift
 import FirebaseCore
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 3.0)
@@ -21,9 +20,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBar.tintColor =  UIColor.black
 
         UINavigationBar.appearance().tintColor = .black
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if let error = error {
+                print("Error requesting notification authorization: \(error.localizedDescription)")
+            } else if granted {
+                print("Notification authorization granted")
+            } else {
+                print("Notification authorization not granted")
+            }
+        }
+        center.delegate = self
+
         return true
     }
 
+    // MARK: - UNUserNotificationCenterDelegate
+        
+        func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            print("Usrinfo associated with notification == \(response.notification.request.content.userInfo)")
+
+            print("Notification received")
+            completionHandler()
+        }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .badge, .sound])
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

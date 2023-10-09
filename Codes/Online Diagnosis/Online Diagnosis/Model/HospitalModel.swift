@@ -144,3 +144,53 @@ struct MedicalDetail: Codable{
     var medicalProblem: String?
     var patientId: String?
 }
+
+
+
+
+struct PrescriptionModel {
+    var chatId: String
+    var doctorName: String
+    var doctorEmail: String
+    var patientEmail: String
+    var patientName: String
+    var prescription: String
+    var dateSent: Double
+    
+    init(data: [String: Any]) {
+        self.chatId = data["chatId"] as? String ?? ""
+        self.doctorName = data["doctorName"] as? String ?? ""
+        self.doctorEmail = data["doctorEmail"] as? String ?? ""
+        self.patientEmail = data["patientEmail"] as? String ?? ""
+        self.prescription = data["prescription"] as? String ?? ""
+        self.patientName = data["patientName"] as? String ?? ""
+        self.dateSent = data["dateSent"] as? Double ?? 0.0
+    }
+  
+    
+    
+       func getDate() -> Date {
+           return Date(timeIntervalSince1970: dateSent)
+       }
+       
+       func getDateAsString() -> String {
+           let date = getDate()
+           let formatter = DateFormatter()
+           formatter.dateFormat = "MMM d, yyyy"
+           return formatter.string(from: date)
+       }
+       
+       func getTimeAsString() -> String {
+           let date = getDate()
+           let formatter = DateFormatter()
+           formatter.dateFormat = "h:mm a"
+           return formatter.string(from: date)
+       }
+       
+       func getDateString() -> String {
+           return "\(getDateAsString()) at \(getTimeAsString())"
+       }
+
+  
+}
+

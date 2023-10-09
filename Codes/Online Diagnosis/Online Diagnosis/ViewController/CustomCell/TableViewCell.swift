@@ -19,6 +19,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var acceptBtn: UIButton!
     @IBOutlet weak var rejectBtn: UIButton!
     @IBOutlet weak var viewBtn: UIButton!
+    @IBOutlet weak var medicalLbl: UILabel!
+    @IBOutlet weak var patientLbl: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

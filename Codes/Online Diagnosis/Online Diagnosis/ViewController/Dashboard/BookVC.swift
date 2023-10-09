@@ -83,13 +83,18 @@ class BookVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate, UIT
         
     
     // MARK: - CLLocationManagerDelegate
-        
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let userLocation = location.coordinate
+            let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 2000, longitudinalMeters: 2000)
+            mapView.setRegion(region, animated: true)
         }
-        
-        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print("Location manager error: \(error.localizedDescription)")
-        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager error: \(error.localizedDescription)")
+    }
     
     func showDirectionsToHospital(cordinate: CLLocationCoordinate2D, title: String) {
         // You can present a UIAlertController with options for directions and hospital info
@@ -153,9 +158,6 @@ class BookVC: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate, UIT
                 let annotation =  CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: item["hospitalName"], image: UIImage(named: "pin"))
                 
                 mapView.addAnnotation(annotation)
-                
-                let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0))
-                mapView.setRegion(initialRegion, animated: true)
         }
         locationManager.startUpdatingLocation()
     }

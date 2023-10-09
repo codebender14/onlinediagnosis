@@ -9,10 +9,15 @@ import FirebaseFirestore
 
 class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentView: UISegmentedControl!
 
+    @IBOutlet weak var segmentHeight: NSLayoutConstraint!
+    
     var appointmentData : [AppointmentDetail] = []
+    var rejectedAppointData : [AppointmentDetail] = []
     var approveAppointmentData : [ApproveAppointmentDetail] = []
 
+    var filterData : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +31,31 @@ class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewData
         
         let userType = UserDefaultsManager.shared.getUserType()
         if userType == UserType.doctor.rawValue{
+            self.segmentHeight.constant = 0
+            self.segmentView.isHidden = true
             self.getApproveAppointmentList()
         } else {
+            self.segmentHeight.constant = 45
+            self.segmentView.isHidden = false
             self.getAppointmentList()
         }
         
+    }
+    
+    @IBAction func segmentDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.filterData = false
+            self.tableView.reloadData()
+        case 1:
+
+            self.filterData = true
+            self.tableView.reloadData()
+            
+        default:
+            break
+        }
+    
     }
     
     func getAppointmentList() {
@@ -66,8 +91,13 @@ class AppointmentHistory: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 
             }
+            
+            self.rejectedAppointData = self.appointmentData.filter { appointment in
+                // Replace "Pending" with the status you want to filter by
+                return appointment.status == "Rejected"
+            }
 
-            print(self.appointmentData)
+            print(self.rejectedAppointData)
             self.tableView.reloadData()
         }
     }
@@ -122,30 +152,42 @@ extension AppointmentHistory {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let userType = UserDefaultsManager.shared.getUserType()
-        if userType == UserType.doctor.rawValue{
-            return self.approveAppointmentData.count
+        if filterData {
+            return self.rejectedAppointData.count
         } else {
-            return self.appointmentData.count
+            if userType == UserType.doctor.rawValue{
+                return self.approveAppointmentData.count
+            } else {
+                return self.appointmentData.count
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  String(describing: TableViewCell.self), for: indexPath) as! TableViewCell
         let userType = UserDefaultsManager.shared.getUserType()
-        if userType == UserType.doctor.rawValue{
-            let data = approveAppointmentData[indexPath.row]
+        if filterData {
+            let data = rejectedAppointData[indexPath.row]
             cell.titleLbl.text = "Patient Name : \(data.pFirstname ?? "")"
             cell.doctorName.text = "Doctor Name : \(data.doctorName ?? "")"
             cell.date.text = data.date
             cell.time.text = data.time
-
-        }
-        else {
-            let data = appointmentData[indexPath.row]
-            cell.titleLbl.text = "Patient Name : \(data.pFirstname ?? "")"
-            cell.doctorName.text = "Doctor Name : \(data.doctorName ?? "")"
-            cell.date.text = data.date
-            cell.time.text = data.time
+        } else {
+            if userType == UserType.doctor.rawValue{
+                let data = approveAppointmentData[indexPath.row]
+                cell.titleLbl.text = "Patient Name : \(data.pFirstname ?? "")"
+                cell.doctorName.text = "Doctor Name : \(data.doctorName ?? "")"
+                cell.date.text = data.date
+                cell.time.text = data.time
+                
+            }
+            else {
+                let data = appointmentData[indexPath.row]
+                cell.titleLbl.text = "Patient Name : \(data.pFirstname ?? "")"
+                cell.doctorName.text = "Doctor Name : \(data.doctorName ?? "")"
+                cell.date.text = data.date
+                cell.time.text = data.time
+            }
         }
         return cell
     }
@@ -156,22 +198,32 @@ extension AppointmentHistory {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let userType = UserDefaultsManager.shared.getUserType()
-        if userType == UserType.patient.rawValue{
-            let data = self.appointmentData[indexPath.row]
+        if filterData {
+            let data = self.rejectedAppointData[indexPath.row]
             let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
             
             vc.viewAppointment = true
             vc.appointmentList = data
             self.navigationController?.pushViewController(vc, animated: true)
+
         } else {
-            let data = self.approveAppointmentData[indexPath.row]
-            let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
-            
-            vc.approveAppointmentData = data
-            vc.viewApproveAppointment = true
-            vc.viewAppointment = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            let userType = UserDefaultsManager.shared.getUserType()
+            if userType == UserType.patient.rawValue{
+                let data = self.appointmentData[indexPath.row]
+                let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
+                
+                vc.viewAppointment = true
+                vc.appointmentList = data
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let data = self.approveAppointmentData[indexPath.row]
+                let vc = self.storyboard?.instantiateViewController(withIdentifier:  "BookAppointment" ) as! BookAppointment
+                
+                vc.approveAppointmentData = data
+                vc.viewApproveAppointment = true
+                vc.viewAppointment = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.maximumDate = Date()
         self.dob.inputView =  datePicker
         self.showDatePicker()
         
@@ -64,10 +65,10 @@ class SignUpVC: UIViewController {
              showAlerOnTop(message: "Please enter first name.")
             return false
         }
-        if(self.middlename.text!.isEmpty) {
-             showAlerOnTop(message: "Please enter middle name.")
-            return false
-        }
+//        if(self.middlename.text!.isEmpty) {
+//             showAlerOnTop(message: "Please enter middle name.")
+//            return false
+//        }
         if(self.lastname.text!.isEmpty) {
             showAlerOnTop(message: "Please enter last name.")
            return false
@@ -174,7 +175,7 @@ extension SignUpVC{
         @objc func doneHolydatePicker() {
             //For date formate
             let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd-yyyy"
+            formatter.dateFormat = "MM/dd/yyyy"
             dob.text = formatter.string(from: datePicker.date)
             //dismiss date picker dialog
             self.view.endEditing(true)

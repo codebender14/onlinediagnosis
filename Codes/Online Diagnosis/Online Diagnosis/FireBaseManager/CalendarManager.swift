@@ -16,7 +16,7 @@ class CalendarManager {
         let eventStore = EKEventStore()
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         guard let startDate = dateFormatter.date(from: date) else {
             print("Invalid date format")
             return
@@ -53,6 +53,4 @@ class CalendarManager {
             print("Error saving event to calendar: \(error.localizedDescription)")
         }
     }
-
-    
 }

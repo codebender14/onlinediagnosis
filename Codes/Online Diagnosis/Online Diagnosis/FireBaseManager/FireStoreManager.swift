@@ -14,13 +14,19 @@ class FireStoreManager {
 
    var db: Firestore!
    var dbRef : CollectionReference!
+   var prescription : CollectionReference!
+   var lastMessages : CollectionReference!
+   var chatDbRef : CollectionReference!
    
    init() {
        let settings = FirestoreSettings()
        Firestore.firestore().settings = settings
        db = Firestore.firestore()
        dbRef = db.collection("Users")
-      
+       prescription = db.collection("Prescription")
+       lastMessages = db.collection("LastMessages")
+       chatDbRef = db.collection("Chat")
+     
    }
    
    func signUp(firstName:String,middleName:String,lastName:String,dob:String,gender:String,email:String,password:String,userType:String) {
@@ -262,6 +268,51 @@ class FireStoreManager {
 
    }
    
+    
+    func getPrescriptionDetails(pataintEmail: String, documentId: String, completionHandler: @escaping (PrescriptionModel?) -> Void) {
+        let dbRef = prescription.document(pataintEmail).collection("Prescriptions").document(documentId)
+        
+        dbRef.getDocument { (snapshot, error) in
+            if let error = error {
+                print("Error getting prescription document: \(error)")
+                completionHandler(nil)
+            } else if let snapshot = snapshot, snapshot.exists {
+                let data = snapshot.data() ?? [:]
+                let prescriptionModel = PrescriptionModel(data: data)
+                completionHandler(prescriptionModel)
+            } else {
+                print("Prescription document does not exist")
+                completionHandler(nil)
+            }
+        }
+    }
+    
+    
+    func getPrescriptions(patientEmail: String, completionHandler: @escaping ([PrescriptionModel]) -> Void) {
+        let dbRef = prescription.document(patientEmail).collection("Prescriptions")
+        
+        dbRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting prescription documents: \(error)")
+                completionHandler([])
+            } else {
+                var prescriptions: [PrescriptionModel] = []
+                
+                for document in querySnapshot?.documents ?? [] {
+                    let data = document.data()
+                    let prescriptionModel = PrescriptionModel(data: data)
+                    prescriptions.append(prescriptionModel)
+                }
+                
+                completionHandler(prescriptions)
+            }
+        }
+    }
+
+    
+
+    
+    
    func addNewAppointmentDetail(email: String, data: AppointmentModel,completion: @escaping (Bool)->()) {
        let data = ["patientId": data.patientId ?? "",
                    "pFirstname": data.pFirstname ?? "",
@@ -313,7 +364,7 @@ class FireStoreManager {
            print(querySnapshot?.count)
            
            if(querySnapshot?.count == 0) {
-               showAlerOnTop(message: "Email id not found!!")
+               showAlerOnTop(message: "Doctor email id not found!!")
            }else {
                
                for document in querySnapshot!.documents {
@@ -371,7 +422,98 @@ class FireStoreManager {
        }
    }
    
-   
+    func deleteDoctorAppointmentDetail(bookingDate: Double, patientId: String, status: String, doctorEmail: String, data: AppointmentModel, completion: @escaping (Bool)->()) {
+        let reference = self.dbRef.whereField("email", isEqualTo: doctorEmail)
+    
+        reference.getDocuments { (querySnapshot, err) in
+            
+            print(querySnapshot?.count)
+            
+            if(querySnapshot?.count == 0) {
+                showAlerOnTop(message: "Doctor email id not found!!")
+            }else {
+                var path = "ApproveAppointments"
+                
+                if status == "Pending".lowercased() {
+                    path = "Appoinments"
+                }
+                
+                for document in querySnapshot!.documents {
+                    let doctorDocumentID = document.documentID
+                    
+                    self.dbRef.document(doctorDocumentID).collection(path)
+                            .whereField("patientId", isEqualTo: patientId)
+                            .getDocuments { (querySnapshot, error) in
+                                if let error = error {
+                                    print("Error querying documents: \(error.localizedDescription)")
+                                    return
+                                }
+
+                                guard let documents = querySnapshot?.documents else {
+                                    print("No documents found with the specified email.")
+                                    return
+                                }
+                                
+                            let doctorDocumentID = document.documentID
+                            let documentReference = self.dbRef.document(doctorDocumentID)
+
+                            if status == "Pending".lowercased(){
+                                documentReference.delete { error in
+                                    if let error = error {
+                                        print("Error deleting document: \(error.localizedDescription)")
+                                    } else {
+                                        completion(true)
+                                        print("Document deleted successfully!")
+                                    }
+                                }
+                            }
+
+                            else {
+                                self.deletePendingAppoinmentFromDoctor(bookingDate: bookingDate, doctorDocumentId: doctorDocumentID, doctorEmail: doctorEmail, data: data) { success in
+                                    completion(true)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+    }
+    
+    func deletePendingAppoinmentFromDoctor(bookingDate: Double, doctorDocumentId: String, doctorEmail: String, data: AppointmentModel, completion: @escaping (Bool)->()) {
+        let data = ["patientId": data.patientId ?? "",
+                    "pFirstname": data.pFirstname ?? "",
+                    "pLastname": data.pLastname ?? "",
+                    "pMiddlename": data.pMiddlename ?? "",
+                    "doctorName": data.doctorName ?? "",
+                    "hospitalName": data.hospitalName ?? "",
+                    "medicalEmergency": data.medicalEmergency ?? "",
+                    "date": data.date ?? "",
+                    "time": data.time ?? "",
+                    "medicalHistory": data.medicalHistory ?? "",
+                    "status": "Cancelled".lowercased(),
+                    "doctorEmail": data.doctorEmail ?? "",
+                    "patientEmail": data.patientEmail ?? "",
+                    "bookingDate": data.bookingDate ?? 0.0,
+                    "documentId": data.documentId ?? ""] as [String : Any]
+
+        let query = self.dbRef.document(doctorDocumentId).collection("ApproveAppointments").whereField("bookingDate", isEqualTo: bookingDate)
+
+        query.getDocuments { querySnapshot, err in
+            for document in querySnapshot!.documents {
+                let appointDocumentID = document.documentID
+                let documentReference = self.dbRef.document(doctorDocumentId).collection("ApproveAppointments").document(appointDocumentID)
+                
+                documentReference.setData(data) { success in
+                    print("Document deleted successfully!")
+
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    
    func addMedicalDetail(firstname: String?, middlename: String?, lastname: String?, dob: String?, gender: String?, phoneNo: String?, address: String?, weight: String?, height: String?, medication: String?, medicalProblem: String?,patientId: String?,completion: @escaping (Bool)->()) {
        
        let medicalData = ["firstname": firstname ?? "", "middlename": middlename ?? "", "lastname": lastname ?? "", "dob": dob ?? "", "gender": gender ?? "", "phoneNo": phoneNo ?? "", "address": address ?? "", "weight": weight ?? "", "height": height ?? "", "medication": medication ?? "", "medicalProblem": medicalProblem ?? "","patientId": UserDefaultsManager.shared.getDocumentId()] as [String : Any]

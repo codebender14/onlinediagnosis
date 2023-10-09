@@ -40,7 +40,7 @@ class HospitalInfo: UIViewController, UITextFieldDelegate  {
                     print(error)
                 }
             }
-            if itemsArray.count > 0{
+            if itemsArray.count > 1{
                 self.doctorList = itemsArray[1]
             }
             

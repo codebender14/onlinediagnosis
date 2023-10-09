@@ -6,7 +6,7 @@
 
 import UIKit
 
-class MedicalHistory: UIViewController {
+class MedicalHistory: UIViewController, UITextViewDelegate {
     @IBOutlet weak var firstname: UITextField!
     @IBOutlet weak var middlename: UITextField!
     @IBOutlet weak var lastname: UITextField!
@@ -17,8 +17,10 @@ class MedicalHistory: UIViewController {
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var height: UITextField!
-    @IBOutlet weak var medication: UITextField!
-    @IBOutlet weak var medicalProblem: UITextField!
+    @IBOutlet weak var medication: UITextView!
+    @IBOutlet weak var medicalProblem: UITextView!
+    @IBOutlet weak var medicalView: UIView!
+    @IBOutlet weak var medicalProblemView: UIView!
     @IBOutlet weak var editBtn: UIButton!
     let datePicker = UIDatePicker()
     
@@ -29,17 +31,31 @@ class MedicalHistory: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.medicalView.layer.borderWidth = 1.0 // Set the border width
+        medicalView.layer.borderColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0).cgColor // Set the border color
+        medicalView.layer.cornerRadius = 5.0 // Set the corner radius
+        medicalView.layer.masksToBounds = true
+        
+        
+        self.medicalProblemView.layer.borderWidth = 1.0 // Set the border width
+        medicalProblemView.layer.borderColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0).cgColor
+        medicalProblemView.layer.cornerRadius = 5.0 // Set the corner radius
+        medicalProblemView.layer.masksToBounds = true
+        
+        medication.delegate = self
+        medicalProblem.delegate = self
+        
         self.dob.inputView =  datePicker
         self.showDatePicker()
-        
+        datePicker.minimumDate = Date()
         male.setImage(UIImage(named: "circle"), for: .normal)
         male.setImage(UIImage(named: "fillCircle"), for: .selected)
         
         female.setImage(UIImage(named: "circle"), for: .normal)
         female.setImage(UIImage(named: "fillCircle"), for: .selected)
         self.editBtn.setTitle("Submit", for: .normal)
-
+        
         if doctorViewMedical{
             self.editBtn.isHidden = true
             self.firstname.isUserInteractionEnabled = false
@@ -114,6 +130,14 @@ class MedicalHistory: UIViewController {
                     self.medication.text = item.medication ?? ""
                     self.medicalProblem.text = item.medicalProblem ?? ""
 
+                    if self.medication.text != ""{
+                        self.medication.textColor = UIColor.black
+                    }
+                
+                    if self.medicalProblem.text != "" {
+                        self.medicalProblem.textColor = UIColor.black
+                    }
+                    
                     self.editBtn.setTitle("Update", for: .normal)
 
 //                    self.firstname.isUserInteractionEnabled = false
@@ -220,10 +244,10 @@ class MedicalHistory: UIViewController {
             return false
         }
         
-        if(self.middlename.text!.isEmpty) {
-             showAlerOnTop(message: "Please enter middle name.")
-            return false
-        }
+//        if(self.middlename.text!.isEmpty) {
+//             showAlerOnTop(message: "Please enter middle name.")
+//            return false
+//        }
         
         if(self.lastname.text!.isEmpty) {
             showAlerOnTop(message: "Please enter last name.")
@@ -309,7 +333,7 @@ extension MedicalHistory {
         @objc func doneHolydatePicker() {
             //For date formate
             let formatter = DateFormatter()
-            formatter.dateFormat = "MM-dd-yyyy"
+            formatter.dateFormat = "MM/dd/yyyy" 
             dob.text = formatter.string(from: datePicker.date)
             //dismiss date picker dialog
             self.view.endEditing(true)
@@ -325,4 +349,37 @@ extension MedicalHistory {
         return phoneTest.evaluate(with: phoneNumber)
     }
 
+}
+
+extension MedicalHistory{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView == medication {
+            if medication.text == "Are you currently in any medication ?" {
+                medication.text = ""
+                medication.textColor = UIColor.black
+            }
+        }
+        if textView == medicalProblem {
+            if medicalProblem.text == "List of Medical Problems" {
+                medicalProblem.text = ""
+                medicalProblem.textColor = UIColor.black
+            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView == medication {
+            if medication.text == "" {
+                medication.text = "Are you currently in any medication ?"
+                medication.textColor = UIColor.lightGray
+            }
+        }
+        
+        if textView == medicalProblem {
+            if medicalProblem.text == "" {
+                medicalProblem.text = "List of Medical Problems"
+                medicalProblem.textColor = UIColor.lightGray
+            }
+        }
+    }
 }

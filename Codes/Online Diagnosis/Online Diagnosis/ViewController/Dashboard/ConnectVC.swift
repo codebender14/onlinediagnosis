@@ -104,6 +104,9 @@ extension ConnectVC {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
         let data = appointmentData[indexPath.row]
         vc.chatID = getChatID(email1: data.doctorEmail ?? "", email2: data.patientEmail ?? "")
+        vc.pataintEmail = data.patientEmail ?? ""
+        vc.patientName = (data.pFirstname ?? "") + " " + (data.pLastname ?? "")
+                                                  
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
