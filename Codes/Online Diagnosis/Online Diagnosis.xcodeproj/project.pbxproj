@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B8326C2AEEA37F007CF4D4 /* ChatVC+JitsiMeet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8326B2AEEA37F007CF4D4 /* ChatVC+JitsiMeet.swift */; };
+		00B8326E2AEEABB4007CF4D4 /* CallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8326D2AEEABB4007CF4D4 /* CallVC.swift */; };
 		11430714920ABA4BC2B79AF0 /* Pods_Online_Diagnosis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33AC43D52A423F4DB8A0989F /* Pods_Online_Diagnosis.framework */; };
 		80285BC12AB308F800E158B9 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285BC02AB308F800E158B9 /* ChangePassword.swift */; };
 		80285BC32AB30AB800E158B9 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80285BC22AB30AB800E158B9 /* BackButton.swift */; };
@@ -69,7 +71,22 @@
 		80DED2B32ACCA3BD004E5838 /* ChatList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DED2AE2ACCA3BD004E5838 /* ChatList.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		00B832682AEE9D01007CF4D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00B8326B2AEEA37F007CF4D4 /* ChatVC+JitsiMeet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatVC+JitsiMeet.swift"; sourceTree = "<group>"; };
+		00B8326D2AEEABB4007CF4D4 /* CallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallVC.swift; sourceTree = "<group>"; };
 		33AC43D52A423F4DB8A0989F /* Pods_Online_Diagnosis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Online_Diagnosis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80285BC02AB308F800E158B9 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		80285BC22AB30AB800E158B9 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -283,6 +300,7 @@
 		80DED2952ACCA2F1004E5838 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				00B8326B2AEEA37F007CF4D4 /* ChatVC+JitsiMeet.swift */,
 				80DED2AB2ACCA3BD004E5838 /* ChatList.swift */,
 				80DED2AE2ACCA3BD004E5838 /* ChatList.xib */,
 				80DED2AA2ACCA3BD004E5838 /* ChatVC.swift */,
@@ -292,6 +310,7 @@
 				80DED2A02ACCA359004E5838 /* OtherUserTextMessageCell */,
 				80DED29B2ACCA323004E5838 /* Payment */,
 				80DED2962ACCA2FC004E5838 /* Prescription */,
+				00B8326D2AEEABB4007CF4D4 /* CallVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -352,6 +371,7 @@
 				80ABE5D72AA8F52600117F41 /* Frameworks */,
 				80ABE5D82AA8F52600117F41 /* Resources */,
 				E1712CA6E333DA9E7EBBB7F5 /* [CP] Embed Pods Frameworks */,
+				00B832682AEE9D01007CF4D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -476,6 +496,7 @@
 				803FB6F82AAF4BAC0025EA09 /* HomeVC.swift in Sources */,
 				803FB6FA2AAF4BB50025EA09 /* BookVC.swift in Sources */,
 				808254842ABDC2B500312E7D /* CalendarManager.swift in Sources */,
+				00B8326E2AEEABB4007CF4D4 /* CallVC.swift in Sources */,
 				80DED2B22ACCA3BD004E5838 /* TextViewWithPlaceholder.swift in Sources */,
 				80285BD52AB35A8500E158B9 /* HospitalInfo.swift in Sources */,
 				803FB7062AAF4C720025EA09 /* FireStoreManager.swift in Sources */,
@@ -484,6 +505,7 @@
 				80DED2932ACCA20E004E5838 /* PrescriptionList.swift in Sources */,
 				80285BDA2AB35CF900E158B9 /* DoctorDetailVC.swift in Sources */,
 				80285BDF2AB3744100E158B9 /* HospitalModel.swift in Sources */,
+				00B8326C2AEEA37F007CF4D4 /* ChatVC+JitsiMeet.swift in Sources */,
 				80ABE5FF2AAB8AD800117F41 /* LoginVC.swift in Sources */,
 				80285BC32AB30AB800E158B9 /* BackButton.swift in Sources */,
 				80285BCC2AB3200000E158B9 /* ButtonWithShadow.swift in Sources */,
@@ -663,6 +685,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online Diagnosis/Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Your location is required only once to accelerate the registration process.";
@@ -694,6 +725,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+					"$(PROJECT_DIR)/Online\\ Diagnosis/ZoomSDK",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Online Diagnosis/Info.plist";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Your location is required only once to accelerate the registration process.";

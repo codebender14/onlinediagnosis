@@ -25,5 +25,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow microphone access for meeting</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow video access for meeting</string>
 </dict>
 </plist>

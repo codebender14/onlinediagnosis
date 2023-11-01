@@ -4540,6 +4540,22 @@
                                     <action selector="onPrescription:" destination="Mmm-ze-8jL" eventType="touchUpInside" id="ljQ-ft-KNw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0z-Kd-fWA">
+                                <rect key="frame" x="307" y="64" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="1Ck-xy-LFQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="Zif-Oh-5BO"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="prescription2"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="video.bubble.left" catalog="system"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onMeeting:" destination="Mmm-ze-8jL" eventType="touchUpInside" id="cLR-4Y-DyX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H1W-0s-Bk1"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -4550,6 +4566,7 @@
                             <constraint firstAttribute="trailing" secondItem="F82-Em-Z2a" secondAttribute="trailing" id="9h0-Nl-fdm"/>
                             <constraint firstItem="cxm-Ge-det" firstAttribute="centerY" secondItem="R8j-BE-SLw" secondAttribute="centerY" id="AkU-QN-1ln"/>
                             <constraint firstAttribute="bottom" secondItem="F82-Em-Z2a" secondAttribute="bottom" id="BO3-EG-4z9"/>
+                            <constraint firstItem="FW8-Pc-bfW" firstAttribute="leading" secondItem="q0z-Kd-fWA" secondAttribute="trailing" constant="16" id="EbQ-TH-lwH"/>
                             <constraint firstItem="KiU-L1-fa4" firstAttribute="top" secondItem="hMA-cx-bbU" secondAttribute="bottom" id="Ejm-wy-3P7"/>
                             <constraint firstItem="R8j-BE-SLw" firstAttribute="leading" secondItem="5qv-lb-0tp" secondAttribute="leading" constant="10" id="JHX-p6-Ckc"/>
                             <constraint firstItem="hMA-cx-bbU" firstAttribute="leading" secondItem="H1W-0s-Bk1" secondAttribute="leading" id="KQA-6u-9lk"/>
@@ -4557,6 +4574,7 @@
                             <constraint firstItem="H1W-0s-Bk1" firstAttribute="bottom" secondItem="KiU-L1-fa4" secondAttribute="bottom" id="RJK-gW-zCP"/>
                             <constraint firstItem="hMA-cx-bbU" firstAttribute="top" secondItem="R8j-BE-SLw" secondAttribute="bottom" constant="5" id="Rg4-um-cz3"/>
                             <constraint firstItem="H1W-0s-Bk1" firstAttribute="trailing" secondItem="FW8-Pc-bfW" secondAttribute="trailing" constant="10" id="e79-pA-Yid"/>
+                            <constraint firstItem="q0z-Kd-fWA" firstAttribute="centerY" secondItem="FW8-Pc-bfW" secondAttribute="centerY" id="iBP-l9-P0D"/>
                             <constraint firstItem="F82-Em-Z2a" firstAttribute="leading" secondItem="5qv-lb-0tp" secondAttribute="leading" id="q1l-1k-lIc"/>
                             <constraint firstItem="FW8-Pc-bfW" firstAttribute="centerY" secondItem="cxm-Ge-det" secondAttribute="centerY" id="r6d-qO-GRA"/>
                             <constraint firstItem="hMA-cx-bbU" firstAttribute="trailing" secondItem="H1W-0s-Bk1" secondAttribute="trailing" id="tpT-qk-oyo"/>
@@ -4568,6 +4586,7 @@
                         <outlet property="btnOptions" destination="6cK-dc-Sbd" id="BPG-pc-NaT"/>
                         <outlet property="btnViewProfile" destination="fEJ-JX-3Hf" id="hlo-Vh-6du"/>
                         <outlet property="chatContainer" destination="rBw-m7-P2z" id="h9d-vD-4Nl"/>
+                        <outlet property="meetingButton" destination="q0z-Kd-fWA" id="Ar1-7E-LKm"/>
                         <outlet property="prescriptionButton" destination="FW8-Pc-bfW" id="tcJ-oY-yu7"/>
                         <outlet property="sendMessageView" destination="KiU-L1-fa4" id="mhX-wd-z75"/>
                         <outlet property="tableView" destination="hMA-cx-bbU" id="1PX-2z-Um3"/>
@@ -5017,6 +5036,73 @@
             </objects>
             <point key="canvasLocation" x="8591.6030534351139" y="-1539.4366197183099"/>
         </scene>
+        <!--Book-->
+        <scene sceneID="n2T-vV-rIR">
+            <objects>
+                <viewController storyboardIdentifier="CallVC" id="Qci-AP-K59" customClass="CallVC" customModule="Online_Diagnosis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vx7-BA-7me">
+                        <rect key="frame" x="0.0" y="0.0" width="423" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giN-n8-h7d" customClass="ShadowView" customModule="Online_Diagnosis" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="423" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSC-AY-o7j" customClass="BackButton" customModule="Online_Diagnosis" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="40" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hvH-v4-ldZ"/>
+                                            <constraint firstAttribute="width" constant="50" id="wGD-Mk-hxY"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alx-b6-Bqy">
+                                        <rect key="frame" x="182.66666666666666" y="48.666666666666657" width="58" height="33"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="alx-b6-Bqy" firstAttribute="centerY" secondItem="VSC-AY-o7j" secondAttribute="centerY" id="ALX-yg-ioX"/>
+                                    <constraint firstItem="alx-b6-Bqy" firstAttribute="centerX" secondItem="giN-n8-h7d" secondAttribute="centerX" id="B61-ad-hmQ"/>
+                                    <constraint firstItem="VSC-AY-o7j" firstAttribute="leading" secondItem="giN-n8-h7d" secondAttribute="leading" constant="20" id="DLE-jn-K1d"/>
+                                    <constraint firstAttribute="height" constant="90" id="e1T-Q9-mBC"/>
+                                    <constraint firstAttribute="bottom" secondItem="VSC-AY-o7j" secondAttribute="bottom" id="jIH-qz-TXc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-Qb-Pmj">
+                                <rect key="frame" x="0.0" y="90" width="423" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="spV-IN-Rcq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="spV-IN-Rcq" firstAttribute="bottom" secondItem="Mb2-Qb-Pmj" secondAttribute="bottom" id="4CR-7h-29Z"/>
+                            <constraint firstItem="giN-n8-h7d" firstAttribute="leading" secondItem="Vx7-BA-7me" secondAttribute="leading" id="DvX-2q-Jxb"/>
+                            <constraint firstItem="spV-IN-Rcq" firstAttribute="trailing" secondItem="Mb2-Qb-Pmj" secondAttribute="trailing" id="I5C-fk-ubG"/>
+                            <constraint firstItem="giN-n8-h7d" firstAttribute="top" secondItem="Vx7-BA-7me" secondAttribute="top" id="Pnn-LF-0gp"/>
+                            <constraint firstItem="Mb2-Qb-Pmj" firstAttribute="leading" secondItem="spV-IN-Rcq" secondAttribute="leading" id="pLw-4d-l4J"/>
+                            <constraint firstItem="spV-IN-Rcq" firstAttribute="trailing" secondItem="giN-n8-h7d" secondAttribute="trailing" id="tez-Df-vFN"/>
+                            <constraint firstItem="Mb2-Qb-Pmj" firstAttribute="top" secondItem="giN-n8-h7d" secondAttribute="bottom" id="wfX-6p-0GJ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Book" image="list.bullet.rectangle.portrait" catalog="system" id="Cc5-1y-Le5"/>
+                    <size key="freeformSize" width="423" height="844"/>
+                    <connections>
+                        <outlet property="container" destination="Mb2-Qb-Pmj" id="dYB-Pg-DNV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oH-gf-cjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7620.6106870229005" y="-854.22535211267609"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Hospitals" width="800" height="523"/>
@@ -5040,6 +5126,7 @@
         <image name="pills" catalog="system" width="128" height="104"/>
         <image name="prescription2" width="21.333333969116211" height="21.333333969116211"/>
         <image name="user" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="video.bubble.left" catalog="system" width="128" height="110"/>
         <image name="world" width="85.333335876464844" height="85.333335876464844"/>
         <namedColor name="appColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

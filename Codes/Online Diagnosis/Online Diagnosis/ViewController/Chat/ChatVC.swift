@@ -1,10 +1,11 @@
 import UIKit
 import Foundation
 import FirebaseFirestore
-
-
+ 
 class ChatVC: UIViewController {
 
+    
+    @IBOutlet weak var meetingButton: UIButton!
     @IBOutlet weak var chatContainer: UIView!
     let id = getEmail()
     @IBOutlet weak var textView: TextViewWithPlaceholder!
@@ -23,6 +24,7 @@ class ChatVC: UIViewController {
  
     @IBOutlet weak var prescriptionButton: UIButton!
     
+   
     
     func shortMessages() {
         messages = messages.sorted(by: {
@@ -232,7 +234,7 @@ extension ChatVC {
         self.setNameAndTitle()
         self.getMessages()
         
-        self.prescriptionButton.isHidden = !isDoctor()
+        self.prescriptionButton.isHidden =  false
        
     }
 
@@ -661,14 +663,29 @@ extension ChatVC {
     
     @IBAction func onPrescription(_ sender: Any) {
         
-        showActionSheet()
+        if(isDoctor()) {
+            showActionSheet()
+        }else {
+            showActionSheet()
+        }
+       
     }
     
     
     func showActionSheet() {
         
-          let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
+        if !isDoctor(){
+            
+            actionSheet.addAction(UIAlertAction(title: "Ask For Prescription", style: .default) { _ in
+                // Handle the "Ask For Payment" action here
+              
+                self.sendTextMessage(text:"Please Send Prescription 💊💊 ")
+               
+            })
+            
+        }
          
         if isDoctor(){
             // Add "Ask For Payment" button
@@ -683,7 +700,7 @@ extension ChatVC {
         }
          
 
-        if !isDoctor(){
+        if isDoctor(){
             // Add "Add Prescription" button
             actionSheet.addAction(UIAlertAction(title: "Add Prescription", style: .default) { _ in
                 // Handle the "Add Prescription" action here
