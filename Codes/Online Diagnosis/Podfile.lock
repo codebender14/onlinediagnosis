@@ -1,0 +1,47 @@
+PODS:
+  - DropDown (2.3.13)
+  - Giphy (2.1.20):
+    - libwebp
+  - IQKeyboardManagerSwift (6.3.0)
+  - JitsiMeetSDK (8.1.2):
+    - Giphy (= 2.1.20)
+    - JitsiWebRTC (~> 111.0)
+  - JitsiWebRTC (111.0.2)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+
+DEPENDENCIES:
+  - DropDown (= 2.3.13)
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - JitsiMeetSDK (= 8.1.2)
+
+SPEC REPOS:
+  trunk:
+    - DropDown
+    - Giphy
+    - IQKeyboardManagerSwift
+    - JitsiMeetSDK
+    - JitsiWebRTC
+    - libwebp
+
+SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Giphy: b6d5087521d251bb8c99cdc0eb07bbdf86d142d5
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  JitsiMeetSDK: 116bd72c539b1ef79ef832e2119e941ef8c8e898
+  JitsiWebRTC: 80f62908fcf2a1160e0d14b584323fb6e6be630b
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+
+PODFILE CHECKSUM: bf2a6eb6066809e1990668b55e76a9d79cdb801c
+
+COCOAPODS: 1.13.0
