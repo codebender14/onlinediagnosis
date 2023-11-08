@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Online Prescription.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
