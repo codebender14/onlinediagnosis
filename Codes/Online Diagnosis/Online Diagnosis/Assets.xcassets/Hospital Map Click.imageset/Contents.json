@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Hospital Map Click.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
