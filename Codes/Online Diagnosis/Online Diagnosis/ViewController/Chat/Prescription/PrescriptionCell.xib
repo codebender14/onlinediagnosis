@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gt_walsheim_pro-regular.ttf">
+            <string>GTWalsheimPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PrescriptionCell" rowHeight="167" id="KGk-i7-Jjw" customClass="PrescriptionCell" customModule="Online_Diagnosis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="533" height="167"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="167"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co2-8J-aUv">
+                        <rect key="frame" x="10" y="5" width="513" height="100"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xce-q4-y22">
+                                <rect key="frame" x="20" y="20" width="473" height="40"/>
+                                <color key="backgroundColor" red="0.32941177490000001" green="0.55686277149999996" blue="0.2901961207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yfr-uf-jcE"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View Prescription"/>
+                                <connections>
+                                    <action selector="onPrescription:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e1Z-Me-ah1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znr-nX-aP5">
+                                <rect key="frame" x="442" y="68" width="51" height="13"/>
+                                <fontDescription key="fontDescription" name="GTWalsheimPro-Regular" family="GT Walsheim Pro" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xce-q4-y22" firstAttribute="leading" secondItem="Co2-8J-aUv" secondAttribute="leading" constant="20" id="12m-dR-agF"/>
+                            <constraint firstItem="znr-nX-aP5" firstAttribute="top" secondItem="Xce-q4-y22" secondAttribute="bottom" constant="8" symbolic="YES" id="1OI-0C-bml"/>
+                            <constraint firstItem="Xce-q4-y22" firstAttribute="top" secondItem="Co2-8J-aUv" secondAttribute="top" constant="20" id="ATW-kl-sHE"/>
+                            <constraint firstItem="znr-nX-aP5" firstAttribute="trailing" secondItem="Xce-q4-y22" secondAttribute="trailing" id="B74-E3-eyC"/>
+                            <constraint firstAttribute="bottom" secondItem="Xce-q4-y22" secondAttribute="bottom" constant="40" id="CPZ-Rx-k8R"/>
+                            <constraint firstAttribute="trailing" secondItem="Xce-q4-y22" secondAttribute="trailing" constant="20" id="HAR-Fz-zZV"/>
+                            <constraint firstAttribute="height" constant="100" id="LXL-mx-Xax"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Co2-8J-aUv" secondAttribute="bottom" constant="5" id="B7M-D7-Jwj"/>
+                    <constraint firstAttribute="trailing" secondItem="Co2-8J-aUv" secondAttribute="trailing" constant="10" id="qHa-0M-gp2"/>
+                    <constraint firstItem="Co2-8J-aUv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="x96-6E-iP1"/>
+                    <constraint firstItem="Co2-8J-aUv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xkD-ek-UyF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="container" destination="Co2-8J-aUv" id="ids-0m-YO6"/>
+                <outlet property="datTime" destination="znr-nX-aP5" id="fbf-l8-DEU"/>
+                <outlet property="prescriptionButton" destination="Xce-q4-y22" id="uHR-eH-YsV"/>
+            </connections>
+            <point key="canvasLocation" x="223.66412213740458" y="-10.211267605633804"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
