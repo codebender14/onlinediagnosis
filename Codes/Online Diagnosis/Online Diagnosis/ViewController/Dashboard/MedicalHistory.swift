@@ -35,6 +35,7 @@ class MedicalHistory: UIViewController, UITextViewDelegate {
         self.medicalView.layer.borderWidth = 1.0 // Set the border width
         medicalView.layer.borderColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0).cgColor // Set the border color
         medicalView.layer.cornerRadius = 5.0 // Set the corner radius
+        
         medicalView.layer.masksToBounds = true
         
         
