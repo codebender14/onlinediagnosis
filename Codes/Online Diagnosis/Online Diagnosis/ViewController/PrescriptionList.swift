@@ -78,6 +78,7 @@ extension Double {
         let date = Date(timeIntervalSince1970: epochTimestampInSeconds)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
+     
         return dateFormatter.string(from: date)
     }
     
