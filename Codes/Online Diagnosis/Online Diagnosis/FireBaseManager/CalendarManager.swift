@@ -9,6 +9,7 @@ class CalendarManager {
     func requestAccess(completion: @escaping (Bool, Error?) -> Void) {
         eventStore.requestAccess(to: .event) { (granted, error) in
             completion(granted, error)
+                                              
         }
     }
     
