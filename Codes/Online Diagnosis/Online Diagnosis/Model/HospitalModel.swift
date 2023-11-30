@@ -184,6 +184,7 @@ struct PrescriptionModel {
            let date = getDate()
            let formatter = DateFormatter()
            formatter.dateFormat = "h:mm a"
+           
            return formatter.string(from: date)
        }
        
