@@ -11,6 +11,7 @@ class DoctorHome: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var appointmentData : [AppointmentDetail] = []
+    
     var upcomingData : [AppointmentDetail] = []
     var newData : [ApproveAppointmentDetail] = []
 
